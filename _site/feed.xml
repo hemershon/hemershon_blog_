@@ -1,818 +1,704 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/minimal-mistakes/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/minimal-mistakes/" rel="alternate" type="text/html" /><updated>2024-01-10T21:00:05-05:00</updated><id>http://localhost:4000/minimal-mistakes/feed.xml</id><title type="html">Minimal Mistakes</title><subtitle>A flexible Jekyll theme for your blog or site with a minimalist aesthetic.</subtitle><author><name>Michael Rose</name></author><entry><title type="html">Exclude Post from Search Index</title><link href="http://localhost:4000/minimal-mistakes/jekyll/post-exclude-search/" rel="alternate" type="text/html" title="Exclude Post from Search Index" /><published>2017-11-28T00:00:00-05:00</published><updated>2018-02-19T08:06:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/jekyll/post-exclude-search</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/jekyll/post-exclude-search/">&lt;p&gt;This post should not appear in the search index because it has the following YAML Front Matter:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-11T08:28:53-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hemershon Silva</title><subtitle>Transformando requisitos em realidades</subtitle><author><name>Hemershon Silva</name></author><entry><title type="html">Criando um ambiente Rails</title><link href="http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/" rel="alternate" type="text/html" title="Criando um ambiente Rails" /><published>2023-12-16T00:00:00-05:00</published><updated>2023-12-16T00:00:00-05:00</updated><id>http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails</id><content type="html" xml:base="http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/">&lt;p&gt;Criando o ambiente de desenvolvimento web Ruby on Rails&lt;/p&gt;
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;p&gt;Olá, antes de começar o tutorial vou contar uma pequena experiência nessa instalação de ambiente. Quando comecei com ruby on rails alguns anos atrás sofri bastante com a preparação deste ambiente, minhas primeiras tentativas de configuração foram horríveis, sempre dava erro, sem falar que existem milhões de tutoriais explicando como configurar esse ambiente e nenhum tinha feedback, até mesmo agora quando troquei de computador precisei correr atrás de um tutorial para criar esse ambiente. Então não se preocupe se não conseguir de primeira ou se você não entendeu algo, meu e-mail está à disposição para suas dúvidas, vou explicar de uma forma simples e bem didática, espero que gostem!!!&lt;/p&gt;
+
+&lt;p&gt;Para funcionar o Ruby on Rails em nossas máquinas precisamos configurar com algumas dependências que fazem com que RoR possa funcionar perfeitamente em sua máquina e ajudar muito no seu dia dia, mas não estranhe quando se deparar com outras dependências, pois ao longo do tutorial vou explicando as funcionalidades.&lt;/p&gt;
+
+&lt;p&gt;Instalando o Ruby on rails com dependências necessárias Antes, você precisa atualizar seu Debian&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Isso vai atualizar seu sistema e deixar ele redondo para o resto das instalações&lt;/p&gt;
+
+&lt;p&gt;Próximo passo é para o git.&lt;/p&gt;
+
+&lt;p&gt;sudo apt install git
+O que é git?&lt;/p&gt;
+
+&lt;p&gt;Git é um sistema de controle de versão de arquivos e através deles podemos desenvolver projetos nos quais diversas pessoas podem contribuir simultaneamente no mesmo projeto, e como seria? Editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem subescritas.&lt;/p&gt;
+
+&lt;p&gt;após a instalação vamos para configuração&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config ---global user.name &quot;seu nome&quot;
+git config –global user.email &quot;seu email&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;essa configuração é para o git entender de quem é os commits e se tem autorização. Caso você não entendeu, vou falar mais sobre git na próximo tutorial.&lt;/p&gt;
+
+&lt;p&gt;O que é nodejs?&lt;/p&gt;
+
+&lt;p&gt;Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.&lt;/p&gt;
+
+&lt;p&gt;Antes de instalar o nodejs precisamos do repositório&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;agora vamos a instalação&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;O que é Yarn&lt;/p&gt;
+
+&lt;p&gt;É um gerenciador ( dependências) de pacotes javascript que podemos via linha de comandos, baixar pacotes para nossa aplicação que foram desenvolvidos por outras pessoas, além de poder compartilhar também, além de ser uma alternativa ao npm.&lt;/p&gt;
+
+&lt;p&gt;Agora vamos instalar o Yarn, como você vai ver aqui, essa instalação é um pouco complexa porque vai precisar de uma chave GPG&lt;/p&gt;
+
+&lt;p&gt;O que é GPG?&lt;/p&gt;
+
+&lt;p&gt;GPG é uma criptografia assimétrica, ou seja, emprega um par de chaves para alcançar seu objetivo – uma chave pública e uma chave privada.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;também vamos adicionar o repositório do Yarn&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Finalmente vamos a instalação do yarn&lt;/p&gt;
+
+&lt;p&gt;O Yarn usa o mesmo package.json que já temos no projeto em JavaScript e não adiciona nenhuma outra dependência,utilizando o mesmo repositório que o NPM já roda.&lt;/p&gt;
+
+&lt;p&gt;Qual a vantagem do Yarn?&lt;/p&gt;
+
+&lt;p&gt;Uma das vantagens do Yarn é ele ser mais rápido, tende a resolver alguns conflitos de versão de módulo, cria um cash local para caso você já tenha utilizado algum módulo qualquer com Yarn, essa versão específica já fica salva na sua máquina e caso você precise usar em outro projeto, ela utiliza do cash e não precisa baixar um novo, além disso, resolve algumas coisas interessantes como, por exemplo, é muito comum fazermos:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Agora vamos para o tão esperado rvm&lt;/p&gt;
+
+&lt;p&gt;O que é o RVM?&lt;/p&gt;
+
+&lt;p&gt;RVM é acrônimo para Ruby Version Manager, uma ferramenta de linha de comando que possibilita instalar e gerenciar diversas versões do Ruby e suas gems. Usar o RVM facilita a transição entre versões do Ruby e versões das gems. Usar o RMV é muito simples, o único requisito básico é um ambiente POSIX (linux, bsd, etc), nesse tutorial vou instalar no Mac, basta abrir o terminal e executar o comando abaixo:&lt;/p&gt;
+
+&lt;p&gt;Sem mais delogas vamos direto para instalação&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\curl -sSL https://get.rvm.io | bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;agora vamos dar um endereço para o seu bash executar o rvm no&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source ~/.rvm/scripts/rvm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Source port é o nome dado à portabilização de um programa que é geralmente apenas um arquivo executável que foi modificado a partir do código de fonte do programa original e substituiu o executável original, para que possa ser rodado em uma outra plataforma para a qual não foi originalmente escrito.&lt;/p&gt;
+
+&lt;p&gt;vou falar mais sobre rvm e suas versões no próximo tutorial, no momento vamos instalar essa versão&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm install 3.2.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Vamos usar essa versão&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm use 3.2.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Os Ideais do Criador do Ruby&lt;/p&gt;
+
+&lt;p&gt;O Ruby é uma linguagem com um cuidadoso equilíbrio. O seu criador, Yukihiro “Matz” Matsumoto, uniu partes das suas linguagens favoritas (Perl, Smalltalk, Lisp e outros) para formar uma nova linguagem que equilibra a programação funcional com a programação imperativa. Ele disse com frequência que está “tentando tornar o Ruby natural, não simples”, de uma forma que reflita a vida. Elaborando sobre isto, acrescenta: O Ruby é simples na aparência, mas muito complexo no interior, tal como o corpo humano.&lt;/p&gt;
+
+&lt;p&gt;RubyGems&lt;/p&gt;
+
+&lt;p&gt;RubyGems é um gerenciador de pacotes para a linguagem de programação Ruby que provê um formato padrão para a distribuição de programas Ruby e bibliotecas em um formato auto-suficiente chamado de gem (“jóia”, do inglês), uma ferramenta projetada para gerenciar facilmente a instalação de gems, e um servidor para distribuí-los. RubyGems foi criado em volta de novembro de 2003 e agora faz parte da biblioteca padrão do Ruby versão 1.9 a diante.&lt;/p&gt;
+
+&lt;p&gt;Redis Isso deve ser novo pra você certo ou não?&lt;/p&gt;
+
+&lt;p&gt;vamos usar o redis nesse ambiente nos próximos tutoriais, vou me aprofundar nesse banco não relacional,&lt;/p&gt;
+
+&lt;p&gt;a instalação dele é meia complexa, mais é só seguir meus passos que você vai conseguir&lt;/p&gt;
+
+&lt;p&gt;Redis: o que é, e para que serve?&lt;/p&gt;
+
+&lt;p&gt;um banco de dados não relacional, também conhecido por NOSQL (Not Only SQL), que foi criado por Salvatore Sanfiippo e liberado em forma open-source em 2009. Redis significa REmote DIctionary Server, e pelo seu significado, já podemos ter uma ideia de como ele trabalha e armazena os dados. Os dados são armazenados na forma de chave-valor, lembrando a estrutura do Dictionary do .net e do Map do Java. Um ponto importante que vale chamar a atenção aqui, é que o valor utilizado como chave no Redis pode possuir diferentes formatos, podendo ser strings, hashes, lists, sets e sets ordenados.z vai fazer o download&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://download.redis.io/redis-stable.tag.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;logo em seguida vamos descompactar o aquivo baixado&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar xvzf redis-stable.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;você precisa entrar no diretório da pasta redis-stable&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd redis-stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;já dentro da pasta vamos a instalação&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make
+make test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Aguarde…☕&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;tudo certo?&lt;/p&gt;
+
+&lt;p&gt;Agora vamos executar&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;redis-server –daemonize yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;O Redis é extremamente rápido, tanto para escrita como para leitura dos dados, graças ao fato de armazenar seus dados em memória. Apesar disso, o Redis permite que os dados sejam persistidos fisicamente caso desejado.&lt;/p&gt;
+
+&lt;p&gt;Agora vamos para a instalação do postgresql&lt;/p&gt;
+
+&lt;p&gt;bom vou usar esse banco de dados para nossas aulas, mais caso queira usar outro banco fique a vontade. Por padrão o Rails usa o SQLite3 pois é bem simples, versátil e consegue se comportar bem em um ambiente de desenvolvimento.&lt;/p&gt;
+
+&lt;p&gt;Instalação do postgresql&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install postgresql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;O que é o PostgreSQL?&lt;/p&gt;
+
+&lt;p&gt;O PostgreSQL é um sistema de gerenciamento de banco de dados objeto-relacional baseado no POSTGRES Versão 4.2 desenvolvido pelo Departamento de Ciência da Computação da Universidade da Califórnia em Berkeley. O POSTGRES foi pioneiro de vários conceitos que somente se tornaram disponíveis muito mais tarde em alguns sistemas de banco de dados comerciais.&lt;/p&gt;
+
+&lt;p&gt;O PostgreSQL é um descendente de código fonte aberto deste código original de Berkeley, que suporta grande parte do padrão SQL e oferece muitas funcionalidades modernas, como:&lt;/p&gt;
+
+&lt;p&gt;comandos complexos
+chaves estrangeiras
+gatilhos
+visões
+integridade transacional
+controle de simultaneidade multiversão
+Além disso, o PostgreSQL pode ser ampliado pelo usuário de muitas maneiras como, por exemplo, adicionando novos tipos de dado, funções, operadoresfunções de agregação, métodos de índice, linguagens procedurais -Devido à sua licença liberal, o PostgreSQL pode ser utilizado, modificado e distribuído por qualquer pessoa para qualquer finalidade, seja particular, comercial ou acadêmica, livre de encargos.
+Antes de irmos para outros passos precisamos instalar uma dependência da&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem pg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install libpq-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Bom para que funcione precisamos configura-lo para que o mesmo rode perfeitamente no seu ambiente, antes de mais nada vamos verificar qual é a versão que foi instalado no seu ambiente, não importa qual é a sua versão que está instalado no seu ambiente, essa configuração vai funcionar em quase todas versões anteriores essa configuração é um pouco complexa, mais você fazendo com calma e com atenção você consegue primeiro vamos ao .conf&lt;/p&gt;
+
+&lt;p&gt;O pg_hba.conf controla as que máquinas terão acesso ao PostgreSQL e a autenticação dessas máquinas clientes (sem autenticação ou através de outras formas, trust, md5, crypt, etc). Quando é especificada a autenticação trust, o PostgreSQL assume que qualquer um que possa se conectar ao servidor está autorizado a acessar o banco de dados como qualquer usuário que seja especificado (incluindo o superusuário do banco de dados). Os métodos de autenticação baseados em senha são md5, crypt e password. Estes métodos operam de forma semelhante, exceto com relação à forma como a senha é enviada através da conexão, mas somente o método md5 suporta senhas criptografadas armazenadas no catálogo do sistema.&lt;/p&gt;
+
+&lt;p&gt;Vamos á alteração&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Indentifique as linhas abaixo, com elas que vamos fazer á alteração&lt;/p&gt;
+
+&lt;h1 id=&quot;database-administrative-login-by-unix-domain-socket&quot;&gt;Database administrative login by Unix domain socket&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    local        all       postgres              peer
+    ``````
+Altere para trust
+
+
+# Database administrative login by Unix domain socket
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; local        all      postgres                  trust `````` pronto!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search: false&lt;/code&gt; only works to exclude posts when using Lunr as a search provider.&lt;/p&gt;
+&lt;p&gt;Salva e vamos reiniciar o postgresql&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/init.d/postgresql restart ou service postgresql restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;vamos conectar&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;psql -U postgres
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;precisamos de uma senha para o usuário postgres certo?&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ALTER USER postgres WITH ENCRYPTED PASSWORD ‘suasenha’;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;agora vamos sair do postgres&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\q
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;novamente vamos alterar o socket&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;indentifique as linhas abaixo, com elas que vamos fazer á alteração&lt;/p&gt;
 
-&lt;p&gt;To exclude files when using Algolia as a search provider add an array to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;algolia.files_to_exclude&lt;/code&gt; in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;. For more configuration options be sure to check their &lt;a href=&quot;https://community.algolia.com/jekyll-algolia/options.html&quot;&gt;full documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;database-administrative-login-by-unix-domain-socket-1&quot;&gt;Database administrative login by Unix domain socket&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     local        all      postgres                  trust
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;altere a para&lt;/p&gt;
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;algolia&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Exclude more files from indexing&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;files_to_exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.html&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.md&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;excluded-file.html&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_posts/2017-11-28-post-exclude-search.md&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;subdirectory/*.html&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="Jekyll" /><summary type="html">This post should not appear in the search index because it has the following YAML Front Matter:</summary></entry><entry><title type="html">Layout: Header Video</title><link href="http://localhost:4000/minimal-mistakes/layout/uncategorized/layout-header-video/" rel="alternate" type="text/html" title="Layout: Header Video" /><published>2017-01-23T00:00:00-05:00</published><updated>2017-01-23T00:00:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/layout/uncategorized/layout-header-video</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/layout/uncategorized/layout-header-video/">&lt;p&gt;This post should display a &lt;strong&gt;header with a responsive video&lt;/strong&gt;, if the theme supports it.&lt;/p&gt;
+&lt;h1 id=&quot;database-administrative-login-by-unix-domain-socket-2&quot;&gt;Database administrative login by Unix domain socket&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     local        all      postgres                  md5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;pronto!&lt;/p&gt;
 
-&lt;h2 id=&quot;settings&quot;&gt;Settings&lt;/h2&gt;
+&lt;p&gt;Salva e vamos reiniciar o postgresql&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/init.d/postgresql restart ou service postgresql restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Vamos acessar novamente o postgres&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;psql -U postgres -W
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;digite sua senha&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Parameter&lt;/th&gt;
-      &lt;th&gt;Required&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Required&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;ID of the video&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;provider&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Required&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Hosting provider of the video, either &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;youtube&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vimeo&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;pronto o usuario postgres está ok, agora vamos para seu usuário, o que você vai usar no seu ambiente&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE USER fulano WITH ENCRYPTED PASSWORD ‘senha’;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;observe que você criou seu usuário, agora vamos dar as permissões para ele como um super user&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ALTER USER fulano WITH SUPERUSER;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Pronto seu postgresql está funcionando perfeitamente!&lt;/p&gt;
 
-&lt;h3 id=&quot;youtube&quot;&gt;YouTube&lt;/h3&gt;
+&lt;p&gt;Rails&lt;/p&gt;
 
-&lt;p&gt;To embed the following YouTube video at url &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://www.youtube.com/watch?v=-PVofD2A9t8&lt;/code&gt; (long version) or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://youtu.be/-PVofD2A9t8&lt;/code&gt; (short version) into a post or page’s main content you’d use:&lt;/p&gt;
+&lt;p&gt;O que é rails?&lt;/p&gt;
 
-&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;video&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-PVofD2A9t8&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;youtube&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;p&gt;Ruby on Rails é um framework que faz o desenvolvimento, implantação e manutenção de uma aplicação web mais fácil e essa utiliza uma linguagem orientada à objeto conhecida como Ruby. Para introduzi-lo é preciso que o desenvolvedor conheça algumas de suas filosofias. Essas são:&lt;/p&gt;
+
+&lt;p&gt;a instalação dele é bem simples&lt;/p&gt;
+
+&lt;p&gt;verifique todas as versões do rails&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem search &apos;^rails$&apos; --all
+gem install rails -v 5.2.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;pronto seu ambiente está todo configurado!&lt;/p&gt;
+
+&lt;p&gt;Vamos testar?&lt;/p&gt;
+
+&lt;p&gt;Vamos criar uma aplicação&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails new teste --database=postgresql
+cd /teste
+rails s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;!-- Courtesy of embedresponsively.com //--&gt;
+&lt;p&gt;Pronto! Seu ambiente está configurado e pronto para o desenvolvimento Ruby on Rails.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><category term="iniciante" /><category term="rails" /><category term="ruby" /><category term="postgresql" /><category term="linux" /><category term="git" /><category term="redis" /><category term="iniciante" /><category term="rails" /><category term="ruby" /><category term="postgresql" /><category term="linux" /><category term="git" /><category term="redis" /><summary type="html">Criando o ambiente de desenvolvimento web Ruby on Rails</summary></entry><entry><title type="html">O básico de HTML</title><link href="http://localhost:4000/web/html/css/iniciante/o-basico-de-html/" rel="alternate" type="text/html" title="O básico de HTML" /><published>2023-12-14T00:00:00-05:00</published><updated>2023-12-14T00:00:00-05:00</updated><id>http://localhost:4000/web/html/css/iniciante/o-basico-de-html</id><content type="html" xml:base="http://localhost:4000/web/html/css/iniciante/o-basico-de-html/">&lt;p&gt;Vou explicar a base do HTML de forma didática!&lt;/p&gt;
 
-&lt;div class=&quot;responsive-video-container&quot;&gt;
-    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/-PVofD2A9t8&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;
-
-&lt;p&gt;To embed it as a video header you’d use the following YAML Front Matter&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;video&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-PVofD2A9t8&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;youtube&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;vimeo&quot;&gt;Vimeo&lt;/h3&gt;
-
-&lt;p&gt;To embed the following Vimeo video at url &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://vimeo.com/212731897&lt;/code&gt; into a post or page’s main content you’d use:&lt;/p&gt;
-
-&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;video&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;212731897&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vimeo&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;!-- Courtesy of embedresponsively.com //--&gt;
-
-&lt;div class=&quot;responsive-video-container&quot;&gt;
-    &lt;iframe src=&quot;https://player.vimeo.com/video/212731897?dnt=true&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;
-
-&lt;p&gt;To embed it as a video header you’d use the following YAML Front Matter&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;video&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;212731897&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vimeo&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="Layout" /><category term="Uncategorized" /><category term="video" /><category term="layout" /><summary type="html">This post should display a header with a responsive video, if the theme supports it.</summary></entry><entry><title type="html">Gemified Theme – Beta Release</title><link href="http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-beta/" rel="alternate" type="text/html" title="Gemified Theme – Beta Release" /><published>2016-10-06T00:00:00-04:00</published><updated>2018-03-20T16:01:04-04:00</updated><id>http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-beta</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-beta/">&lt;p&gt;Hot on the heels of Jekyll v3.3.0 is a beta release of Minimal Mistakes… as a gemified theme.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://rubygems.org/gems/minimal-mistakes-jekyll&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes-jekyll&lt;/code&gt;&lt;/a&gt; can only be used with Jekyll proper. If you’re hosting on GitHub Pages or using that gem the theme won’t work. 3rd party themes haven’t been white-listed so it’s a no go for now.&lt;/p&gt;
-
-&lt;p&gt;Fine with all that? Great. Let’s continue.&lt;/p&gt;
-
-&lt;p&gt;If you’re migrating a site already using Minimal Mistakes and haven’t customized any of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt; partials, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; this should be quick and painless.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-1-remove-theme-files&quot;&gt;Step 1: Remove Theme Files&lt;/h2&gt;
-
-&lt;p&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; folders and files within. You won’t need these anymore as they’re bundled in the theme.&lt;/p&gt;
-
-&lt;p&gt;If you customized any of these then leave them alone and only remove the untouched ones. If setup correctly your modified versions should act as &lt;a href=&quot;http://jekyllrb.com/docs/themes/#overriding-theme-defaults&quot;&gt;overrides&lt;/a&gt; to the versions bundled with the theme.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-2-update-gemfile&quot;&gt;Step 2: Update &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;github-pages&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;, &quot;~&amp;gt; 3.3.0&quot;&lt;/code&gt;. You’ll need the latest version of Jekyll&lt;sup id=&quot;fnref:update-jekyll&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:update-jekyll&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; for Minimal Mistakes to work and load all of the /assets/ properly.&lt;/p&gt;
-
-&lt;p&gt;Add the Minimal Mistakes theme gem:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;When finished your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; should look something like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 3.3.0&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;step-3-run-bundler&quot;&gt;Step 3: Run Bundler&lt;/h2&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt; if you’re updating an existing repo) to install/update Jekyll and the theme.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-4-install-the-theme&quot;&gt;Step 4: Install the Theme&lt;/h2&gt;
-
-&lt;p&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme: &quot;minimal-mistakes-jekyll&quot;&lt;/code&gt; to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;If you’re migrating from an existing Minimal Mistakes site you shouldn’t have to change anything else after this. If it’s a new site consult then docs to &lt;a href=&quot;/minimal-mistakes/docs/configuration/&quot;&gt;properly config&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; Paths for image headers, overlays, teasers, &lt;a href=&quot;/minimal-mistakes/docs/helpers/#gallery&quot;&gt;galleries&lt;/a&gt;, and &lt;a href=&quot;/minimal-mistakes/docs/helpers/#feature-row&quot;&gt;feature rows&lt;/a&gt; have changed and now require a full path. Instead of just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: filename.jpg&lt;/code&gt; you’ll need to use the full path eg: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: assets/images/filename.jpg&lt;/code&gt;. The preferred location is now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; but can be placed elsewhere or external hosted. This all applies for image references in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;author.yml&lt;/code&gt; as well.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-5-jekyll-new-tweaks&quot;&gt;Step 5: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt; Tweaks&lt;/h2&gt;
-
-&lt;p&gt;If this is a new site be sure to add the following files to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/&lt;/code&gt; and customize as you see fit. There is currently no way of bundling them in with the theme, so be sure to consult the docs on how to properly use both.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/ui-text.yml&lt;/code&gt;&lt;/a&gt; - UI text &lt;a href=&quot;/minimal-mistakes/docs/ui-text/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/navigation.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;&lt;/a&gt; - navigation &lt;a href=&quot;/minimal-mistakes/docs/navigation/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You’ll also need to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;site root&amp;gt;/index.html&lt;/code&gt; with a modified &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/index.html&quot;&gt;Minimal Mistakes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: post&lt;/code&gt; in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts/0000-00-00-welcome-to-jekyll.markdown&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt;, or at the very least change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: page&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt; and remove references to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;icon-github.html&lt;/code&gt; (or &lt;a href=&quot;https://github.com/jekyll/minima/tree/master/_includes&quot;&gt;copy to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/a&gt; if using).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;That’s it! If all goes well running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; should spin-up your site. If you encounter any bumps please file an issue on GitHub and make sure to indicate you’re testing the pre-release Ruby gem version.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/issues/new&quot; class=&quot;btn btn--info btn--large&quot;&gt;File an issue&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Thanks!&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:update-jekyll&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;You could also run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update jekyll&lt;/code&gt; to update Jekyll. &lt;a href=&quot;#fnref:update-jekyll&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="Jekyll" /><category term="update" /><summary type="html">Hot on the heels of Jekyll v3.3.0 is a beta release of Minimal Mistakes… as a gemified theme.</summary></entry><entry><title type="html">Gemified Theme – Alpha Release</title><link href="http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-alpha/" rel="alternate" type="text/html" title="Gemified Theme – Alpha Release" /><published>2016-09-21T00:00:00-04:00</published><updated>2018-03-20T16:00:58-04:00</updated><id>http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-alpha</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/jekyll/gemified-theme-alpha/">&lt;p&gt;Jekyll &lt;a href=&quot;http://jekyllrb.com/docs/themes/&quot;&gt;themes distributed as Ruby gems&lt;/a&gt; are finally here to make installing and upgrading much easier. Gone are the days of forking a repo just to “install it”. Or dealing with merge conflicts when pulling in upstream commits to “upgrade it”.&lt;/p&gt;
-
-&lt;p&gt;If you’re interested in testing out Minimal Mistakes as a gemified theme read on. There are a few caveats though:&lt;/p&gt;
+&lt;p&gt;HTML, que significa &lt;strong&gt;H&lt;/strong&gt;yper&lt;strong&gt;t&lt;/strong&gt;ext &lt;strong&gt;M&lt;/strong&gt;arkup &lt;strong&gt;L&lt;/strong&gt;anguage (Linguagem de Marcação de Hipertexto), é a linguagem de marcação padrão para a criação de páginas web. Vamos quebrar isso em partes:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Support for a theme &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; folder was recently &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/5364&quot;&gt;added to Jekyll core&lt;/a&gt;, but has yet to be released or rolled into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github-pages&lt;/code&gt; gem. Meaning you can’t use Minimal Mistakes as a Ruby gem there just yet… locally served or self-hosted installs should be fine if you don’t mind using a pre-release version of Jekyll.&lt;/li&gt;
-  &lt;li&gt;Windows users can’t currently use themes packaged as gems due to a &lt;a href=&quot;https://github.com/jekyll/jekyll/issues/5192&quot;&gt;bug with file paths&lt;/a&gt; in Jekyll core. This is being worked on so hopefully a &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/5256&quot;&gt;fix is on the way&lt;/a&gt; soon.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Hipertexto:&lt;/strong&gt; Isso significa que você pode clicar em texto, imagens ou links para ir para outras páginas ou recursos relacionados. É a essência da navegação na web.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Linguagem de Marcação:&lt;/strong&gt; O HTML usa “marcadores” ou “tags” para envolver diferentes partes do seu conteúdo e dar significado a eles. Essas tags são interpretadas pelos navegadores web para exibir o conteúdo da página.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Fine with all that? Great. Let’s continue.&lt;/p&gt;
+&lt;p&gt;Aqui está um exemplo simples:&lt;/p&gt;
 
-&lt;p&gt;If you’re migrating a site already using Minimal Mistakes and haven’t customized any of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt; partials, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; this should be quick and painless.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Minha Primeira Página&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 
-&lt;h2 id=&quot;step-1-remove-theme-files&quot;&gt;Step 1: Remove Theme Files&lt;/h2&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Olá, Mundo!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Esta é a minha primeira página web.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
 
-&lt;p&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sass&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets&lt;/code&gt; folders and files within. You won’t need these anymore as they’re bundled in the theme.&lt;/p&gt;
-
-&lt;p&gt;If you customized any of these then leave them alone and only remove the untouched ones. If setup correctly your modified versions should act as &lt;a href=&quot;http://jekyllrb.com/docs/themes/#overriding-theme-defaults&quot;&gt;overrides&lt;/a&gt; to the versions bundled with the theme.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-2-update-gemfile&quot;&gt;Step 2: Update &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;In order to test you’ll need to install pre-release gems of Jekyll and Minimal Mistakes.&lt;/p&gt;
-
-&lt;p&gt;Start by replacing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;github-pages&quot;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;&lt;/code&gt; with the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/jekyll/jekyll.git&quot;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then add the pre-release Minimal Mistakes theme gem:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/mmistakes/minimal-mistakes.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;feature/theme-gem&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;When finished your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; should look something like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/jekyll/jekyll.git&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/mmistakes/minimal-mistakes.git&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;feature/theme-gem&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# gem &quot;jekyll-archives&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-paginate&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-sitemap&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-gist&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-feed&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;step-3-run-bundler&quot;&gt;Step 3: Run Bundler&lt;/h2&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt; if you’re updating an existing repo) to install the pre-release gems.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-4-install-the-theme&quot;&gt;Step 4: Install the Theme&lt;/h2&gt;
-
-&lt;p&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;theme: &quot;minimal-mistakes-jekyll&quot;&lt;/code&gt; to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;If you’re migrating from an existing Minimal Mistakes site you shouldn’t have to change anything else after this. If it’s a new site consult then docs to &lt;a href=&quot;/minimal-mistakes/docs/configuration/&quot;&gt;properly config&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; Paths for image headers, overlays, teasers, &lt;a href=&quot;/minimal-mistakes/docs/helpers/#gallery&quot;&gt;galleries&lt;/a&gt;, and &lt;a href=&quot;/minimal-mistakes/docs/helpers/#feature-row&quot;&gt;feature rows&lt;/a&gt; have changed and now require a full path. Instead of just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: filename.jpg&lt;/code&gt; you’ll need to use the full path eg: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image: assets/images/filename.jpg&lt;/code&gt;. The preferred location is now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; but can be placed elsewhere or external hosted. This applies for image references in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;author.yml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;step-5-jekyll-new-tweaks&quot;&gt;Step 5: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt; Tweaks&lt;/h2&gt;
-
-&lt;p&gt;If this is a new site be sure to add the following files to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/&lt;/code&gt; and customize as you see fit. There is currently no way of bundling them in with the theme, so be sure to consult the docs on how to properly use both.&lt;/p&gt;
+&lt;p&gt;Agora, uma breve explicação das partes:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/ui-text.yml&lt;/code&gt;&lt;/a&gt; - UI text &lt;a href=&quot;/minimal-mistakes/docs/ui-text/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/_data/navigation.yml&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;&lt;/a&gt; - navigation &lt;a href=&quot;/minimal-mistakes/docs/navigation/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;: Indica ao navegador que o documento está usando a versão mais recente do HTML.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;html&amp;gt;&lt;/code&gt;: É o elemento raiz que engloba todo o conteúdo da sua página.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;: Contém informações sobre o documento, como o título que aparece na aba do navegador.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;title&amp;gt;&lt;/code&gt;: Define o título da página que aparece na aba do navegador.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;: Contém o conteúdo principal da sua página, como texto, imagens, links, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;: É um cabeçalho (header). HTML tem diferentes níveis de cabeçalhos, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;, …, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;, onde &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; é o maior e mais importante.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt;: Define um parágrafo. O texto dentro deste elemento será exibido como um parágrafo na página.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You’ll also need to:&lt;/p&gt;
+&lt;p&gt;HTML é como você estrutura e organiza o conteúdo da sua página web. Cada tag tem um propósito específico, e ao combiná-las, você cria a estrutura da sua página.&lt;/p&gt;
+
+&lt;p&gt;Vou mostrar alguns exemplos básicos de HTML para ilustrar diferentes elementos e suas utilizações comuns. Lembre-se de que HTML é uma linguagem de marcação, então as tags fornecem a estrutura básica para o conteúdo da página. Aqui estão alguns exemplos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Títulos e Parágrafos:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Exemplo HTML&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Título Principal&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Isto é um parágrafo.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Subtítulo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Outro parágrafo aqui.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Listas:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Listas HTML&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Listas&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item A&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item B&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Item C&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Links:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Links HTML&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Links&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Visite meu &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.exemplo.com&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;site&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Imagens:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Imagens HTML&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;Imagens&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imagem.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Descrição da Imagem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Hemershon Silva</name></author><category term="web" /><category term="HTML" /><category term="CSS" /><category term="iniciante" /><category term="web" /><category term="html" /><category term="css" /><summary type="html">Vou explicar a base do HTML de forma didática!</summary></entry><entry><title type="html">Trilha Profissional</title><link href="http://localhost:4000/web/trilha-profissional/" rel="alternate" type="text/html" title="Trilha Profissional" /><published>2023-10-08T00:00:00-04:00</published><updated>2023-10-08T00:00:00-04:00</updated><id>http://localhost:4000/web/trilha-profissional</id><content type="html" xml:base="http://localhost:4000/web/trilha-profissional/">&lt;p&gt;Olá a todos,&lt;/p&gt;
+
+&lt;p&gt;Decidi traçar um caminho para aprimorar minhas habilidades de desenvolvimento e elevar meu conhecimento técnico. Planejo dividir esse percurso em duas trilhas distintas.&lt;/p&gt;
+
+&lt;p&gt;Na primeira trilha, estabelecerei um cronograma para aprimorar minhas habilidades em algoritmos. Reconheço a importância de praticar a compreensão de problemas e sua execução, pois isso contribuirá significativamente para meu crescimento técnico.&lt;/p&gt;
+
+&lt;p&gt;A segunda trilha será uma revisão abrangente de todo o ecossistema da web. Pretendo revisitar cada tópico que já estudei, identificando áreas que precisam de foco. Valorizo a ideia de que todo conhecimento é valioso, independentemente de sua aplicação prática.&lt;/p&gt;
+
+&lt;p&gt;Mas por que estou fazendo isso?&lt;/p&gt;
+
+&lt;p&gt;Em primeiro lugar, essa revisão ajudará a consolidar meu entendimento em algoritmos, permitindo-me abordar problemas de forma mais eficaz e dentro de prazos razoáveis.&lt;/p&gt;
+
+&lt;p&gt;Além disso, aprofundarei meu conhecimento em estruturas de dados, pois reconheço que algoritmos e estruturas de dados estão interligados na programação. Planejo explorar tópicos fascinantes relacionados a estruturas de dados.&lt;/p&gt;
+
+&lt;p&gt;A segunda trilha tem como objetivo criar um caminho claro para o crescimento e aprimoramento como desenvolvedor web. Pretendo abordar uma ampla gama de tópicos para elevar meu nível de conhecimento e habilidades.&lt;/p&gt;
+
+&lt;p&gt;Estou empolgado para embarcar nessa jornada e compartilhar minhas descobertas ao longo do caminho. Juntos, espero que possamos aprender e crescer como profissionais de&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Habilidades Técnicas:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;HTML e CSS:&lt;/strong&gt; Domine a criação de páginas da web com HTML e estilize-as com CSS. Aprenda sobre layouts responsivos.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+[HTML](https://hemershon.github.io/web/html/css/iniciante/o-basico-de-html/)
+
+1. **JavaScript:** Torne-se proficiente em JavaScript e seus frameworks populares, como React, Angular ou Vue.js, para desenvolvimento front-end.
+
+2. **Backend Development:** Escolha uma linguagem de programação para o desenvolvimento de back-end, como Ruby, Python, Java, Node.js ou PHP. Aprenda a criar APIs e lidar com solicitações do cliente.
+
+3. **Frameworks de Backend:** Domine um framework de backend popular, como Ruby on Rails, Django (Python), Spring (Java) ou Express.js (Node.js).
+
+4. **Bancos de Dados:** Entenda bancos de dados relacionais (MySQL, PostgreSQL) e NoSQL (MongoDB). Aprenda a projetar bancos de dados eficientes.
+
+5. **APIs e RESTful Services:** Saiba como criar e consumir APIs RESTful para troca de dados entre sistemas.
+
+6. **Versionamento de Código:** Use ferramentas de controle de versão, como Git, e aprenda a trabalhar em equipe com o GitFlow.
+
+7. **Segurança Web:** Esteja ciente das melhores práticas de segurança, incluindo proteção contra ataques de injeção, autenticação segura e autorização.
+
+8.  **Testes Automatizados:** Aprenda a escrever testes de unidade, integração e testes de aceitação. Frameworks populares incluem Jest, RSpec e Selenium.
+
+9.  **DevOps:** Familiarize-se com práticas de DevOps, como implantação contínua (CI/CD), contêineres (Docker) e orquestração (Kubernetes).
+
+**Habilidades Profissionais:**
+
+11. **Resolução de Problemas:** Desenvolva a habilidade de identificar e resolver problemas complexos de forma eficaz.
+
+12. **Aprendizado Contínuo:** A indústria de tecnologia evolui rapidamente. Esteja disposto a aprender constantemente novas tecnologias e ferramentas.
+
+13. **Comunicação:** Melhore suas habilidades de comunicação verbal e escrita. Saiba como explicar ideias técnicas de forma clara e eficaz.
+
+14. **Trabalho em Equipe:** Aprenda a colaborar em equipes multidisciplinares e contribuir efetivamente para projetos.
+
+15. **Gerenciamento de Projetos:** Entenda os princípios do gerenciamento de projetos, como o método ágil Scrum.
+
+16. **Conhecimento de Negócios:** Compreenda as necessidades do cliente e como sua solução tecnológica se encaixa nas metas de negócios.
+
+17. **Networking:** Construa uma rede de contatos profissionais. Participe de meetups, conferências e grupos de desenvolvedores.
+
+18. **Portfólio:** Crie um portfólio de projetos reais que demonstrem suas habilidades técnicas e sua capacidade de resolver problemas.
+
+19. **Certificações:** Considere a obtenção de certificações relevantes, como AWS Certified Developer ou certificações de frameworks específicos.
+
+20. **Mentoria:** Busque orientação de desenvolvedores mais experientes. O mentor pode ajudá-lo a acelerar seu crescimento profissional.
+&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><category term="web" /><category term="web" /><category term="rails" /><category term="ruby" /><category term="html" /><summary type="html">Olá a todos,</summary></entry><entry><title type="html">Basico De Tdd Usando Ruby</title><link href="http://localhost:4000/basico-de-tdd-usando-ruby/" rel="alternate" type="text/html" title="Basico De Tdd Usando Ruby" /><published>2023-06-07T00:00:00-04:00</published><updated>2023-06-07T00:00:00-04:00</updated><id>http://localhost:4000/basico-de-tdd-usando-ruby</id><content type="html" xml:base="http://localhost:4000/basico-de-tdd-usando-ruby/">&lt;h1 id=&quot;básico-de-tdd-usando-ruby&quot;&gt;Básico de TDD usando Ruby&lt;/h1&gt;
+
+&lt;p&gt;O Test-Driven Development (TDD) é uma abordagem de desenvolvimento de software que envolve escrever os testes antes de implementar o código. Aqui está um exemplo básico de como aplicar o TDD usando Ruby:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;site root&amp;gt;/index.html&lt;/code&gt; with a modified &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/blob/master/index.html&quot;&gt;Minimal Mistakes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: post&lt;/code&gt; in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts/0000-00-00-welcome-to-jekyll.markdown&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt;, or at the very least change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: page&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: single&lt;/code&gt; and remove references to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;icon-github.html&lt;/code&gt; (or &lt;a href=&quot;https://github.com/jekyll/minima/tree/master/_includes&quot;&gt;copy to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;&lt;/a&gt; if using).&lt;/li&gt;
+  &lt;li&gt;Passo 1: Escrever o teste
+Comece escrevendo um teste que descreva o comportamento desejado do código que você irá implementar. Aqui está um exemplo de teste usando o framework RSpec:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# arquivo: calculator_spec.rb&lt;/span&gt;
 
-&lt;p&gt;That’s it! If all goes well running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; should spin-up your site. If you encounter any bumps please file an issue on GitHub and make sure to indicate you’re testing the pre-release Ruby gem version.&lt;/p&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rspec&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require_relative&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;calculator&apos;&lt;/span&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/issues/new&quot; class=&quot;btn btn--info btn--large&quot;&gt;File an issue&lt;/a&gt;&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Calculator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;deve somar dois números corretamente&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;calculator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Calculator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calculator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Thanks!&lt;/p&gt;</content><author><name>Michael Rose</name></author><category term="Jekyll" /><category term="update" /><summary type="html">Jekyll themes distributed as Ruby gems are finally here to make installing and upgrading much easier. Gone are the days of forking a repo just to “install it”. Or dealing with merge conflicts when pulling in upstream commits to “upgrade it”.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/minimal-mistakes/jekyll/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2016-02-24T00:00:00-05:00</published><updated>2016-02-24T00:00:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/jekyll/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/jekyll/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;Nesse exemplo, estamos testando a funcionalidade de soma em uma classe Calculator. O teste espera que a soma de 2 e 3 seja igual a 5.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Passo 2: Executar o teste (e falhar)
+Agora, execute o teste. Como você ainda não implementou o código, o teste irá falhar, o que é esperado neste ponto.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rspec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calculator_spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;span class=&quot;no&quot;&gt;Failures&lt;/span&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>Michael Rose</name></author><category term="Jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Markup: Syntax Highlighting</title><link href="http://localhost:4000/minimal-mistakes/markup-syntax-highlighting/" rel="alternate" type="text/html" title="Markup: Syntax Highlighting" /><published>2013-08-16T00:00:00-04:00</published><updated>2018-01-03T09:45:06-05:00</updated><id>http://localhost:4000/minimal-mistakes/markup-syntax-highlighting</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/markup-syntax-highlighting/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Calculator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deve&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dois&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ú&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meros&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;corretamente&lt;/span&gt;
+     &lt;span class=&quot;no&quot;&gt;Failure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;h3 id=&quot;gfm-code-blocks&quot;&gt;GFM Code Blocks&lt;/h3&gt;
+        &lt;span class=&quot;ss&quot;&gt;expected: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+             &lt;span class=&quot;ss&quot;&gt;got: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
+      
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compared&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;GitHub Flavored Markdown &lt;a href=&quot;https://help.github.com/articles/creating-and-highlighting-code-blocks/&quot;&gt;fenced code blocks&lt;/a&gt; are supported. To modify styling and highlight colors edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/_sass/syntax.scss&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Passo 3: Implementar o código mínimo necessário
+Agora, implemente o código mínimo necessário para fazer o teste passar. Neste caso, crie um arquivo calculator.rb e defina a classe Calculator com o método sum:&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# arquivo: calculator.rb&lt;/span&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$monospace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type-size-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Calculator&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  {% if page.previous %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.previous.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.previous.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Previous article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-  {% if page.next %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.next.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.next.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.pagination --&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Passo 4: Executar o teste novamente (e passar)
+Execute o teste novamente e verifique se ele passa agora:&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TagIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Page&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;index.html&apos;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read_yaml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;_layouts&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;tag_index.html&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag_title_prefix&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Tagged: &apos;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_suffix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;tag_title_suffix&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&amp;amp;#8211;&apos;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;title&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;description&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;An archive of posts tagged &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.&quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rspec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calculator_spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;failures&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;O teste deve passar sem erros. Isso significa que a implementação do método sum na classe Calculator está correta.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Passo 5: Refatorar e repetir&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Agora que o teste passou, você pode refatorar o código se necessário. Refatoração envolve melhorar o design, legibilidade e desempenho do código sem alterar seu comportamento. Durante a refatoração, você pode executar os testes novamente para garantir que tudo continua funcionando corretamente.&lt;/p&gt;
+
+&lt;p&gt;Repita esses passos para cada nova funcionalidade ou alteração que você desejar fazer no código. O ciclo de TDD é composto por escrever um teste, executá-lo (esperando uma falha), implementar o código mínimo necessário para fazer o teste passar e, em seguida, refatorar o código.&lt;/p&gt;
+
+&lt;p&gt;Essa é apenas uma introdução básica ao TDD usando Ruby. À medida que você ganha mais experiência, pode explorar recursos adicionais, como testes mais complexos, testes de borda, testes de integração e ferramentas auxiliares para testes, como mocks e stubs.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html">Básico de TDD usando Ruby</summary></entry><entry><title type="html">Fundamentos Do Rspec</title><link href="http://localhost:4000/fundamentos-do-rspec/" rel="alternate" type="text/html" title="Fundamentos Do Rspec" /><published>2023-05-29T00:00:00-04:00</published><updated>2023-05-29T00:00:00-04:00</updated><id>http://localhost:4000/fundamentos-do-rspec</id><content type="html" xml:base="http://localhost:4000/fundamentos-do-rspec/">&lt;p&gt;O RSpec é uma biblioteca de teste de comportamento (behavior-driven testing) para a linguagem de programação Ruby. O seu objetivo é facilitar a escrita de testes legíveis e expressivos, fornecendo uma sintaxe clara e concisa que descreve o comportamento esperado de um sistema.&lt;/p&gt;
+
+&lt;p&gt;O fundamento básico do RSpec é o uso de uma sintaxe de domínio específica (DSL - Domain Specific Language) que permite que os testes sejam escritos de forma semelhante à especificação do comportamento do sistema. Isso ajuda a criar uma documentação viva dos requisitos e comportamentos esperados, além de facilitar a leitura e manutenção dos testes.&lt;/p&gt;
+
+&lt;p&gt;O RSpec segue uma abordagem chamada “describe-it”, onde os testes são organizados em blocos descritivos chamados “describe” que agrupam os cenários de teste relacionados. Dentro de cada bloco “describe”, são definidos os testes individuais utilizando a palavra-chave “it”. Cada teste deve ter uma expectativa (expectation) que define o resultado esperado.&lt;/p&gt;
+
+&lt;p&gt;Além disso, o RSpec fornece uma série de “matchers” que são utilizados para verificar se um resultado é igual ao esperado. Esses matchers incluem comparações de igualdade, verificação de tipos, comparação de coleções, entre outros.&lt;/p&gt;
+
+&lt;p&gt;A estrutura básica de um teste RSpec é a seguinte:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Nome do objeto em teste&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;descrição do cenário de teste&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Configuração do ambiente de teste&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Ação a ser testada&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Verificação do resultado esperado usando os matchers&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Essa é apenas uma visão geral do fundamento básico do RSpec. A biblioteca oferece muitos recursos adicionais, como “before” e “after” hooks para configuração prévia e limpeza posterior dos testes, uso de “context” para definir diferentes cenários, uso de “mocks” e “stubs” para simular comportamentos, entre outros. Esses recursos permitem que os testes sejam escritos de forma mais eficiente e flexível.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html"></summary></entry><entry><title type="html">Um Olhar Simples Para A Buscar Linear</title><link href="http://localhost:4000/um-olhar-simples-para-a-buscar-linear/" rel="alternate" type="text/html" title="Um Olhar Simples Para A Buscar Linear" /><published>2023-04-11T00:00:00-04:00</published><updated>2023-04-11T00:00:00-04:00</updated><id>http://localhost:4000/um-olhar-simples-para-a-buscar-linear</id><content type="html" xml:base="http://localhost:4000/um-olhar-simples-para-a-buscar-linear/">&lt;p&gt;O algoritmo de busca linear é muito simples e intuitivo. A ideia é percorrer todos os elementos do array um por um, verificando se cada elemento é igual ao valor de destino que estamos procurando. Se encontrarmos o elemento que estamos procurando, retornamos o índice do elemento no array. Se não encontrarmos o elemento, retornamos nil para indicar que o valor não foi encontrado.&lt;/p&gt;
+
+&lt;p&gt;Na implementação em Ruby, a função linear_search recebe dois argumentos: o array a ser pesquisado e o valor de destino que estamos procurando. Em seguida, a função usa um laço each_with_index para iterar por todos os elementos do array. A cada iteração, o laço passa o elemento atual e o índice desse elemento para um bloco que usa as variáveis item e index.&lt;/p&gt;
+
+&lt;p&gt;Dentro do bloco, verificamos se o elemento atual é igual ao valor de destino que estamos procurando. Se o elemento atual for igual ao valor de destino, retornamos o índice do elemento usando a palavra-chave return. Isso significa que a função termina imediatamente e não executa nenhuma iteração adicional do laço.&lt;/p&gt;
+
+&lt;p&gt;Se chegarmos ao final do laço sem encontrar o valor de destino, isso significa que o valor não está presente no array e a função retorna nil.&lt;/p&gt;
+
+&lt;p&gt;Aqui está um exemplo de como usar a função linear_search para procurar o valor 42 no array [1, 2, 3, 4, 5, 42, 43, 44]:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;linear_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_index&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;array = [2, 3, 4, 9, 19, 20]
+target = 20
+
+index = linear_search(array, target)
+ if index 
+  puts &quot;O valor #{target} foi encontrado no índece #{index} do array&quot;
+ else
+  puts &quot;O valor #{target} não foi encontrado no array&quot;
+ end
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;code-blocks-in-lists&quot;&gt;Code Blocks in Lists&lt;/h3&gt;
-
-&lt;p&gt;Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt;). Usually this will mean indenting 3 spaces instead of 4.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Do step 1.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now do this:&lt;/p&gt;
-
-    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Now you can do this.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;jekyll-highlight-tag&quot;&gt;Jekyll Highlight Tag&lt;/h3&gt;
-
-&lt;p&gt;An example of a code blocking using Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/templates/#code-snippet-highlighting&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% highlight %}&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// &apos;gulp html&apos; -- does nothing&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &apos;gulp html --prod&apos; -- minifies and gzips HTML files for production&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;siteFolderName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;htmlPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;htmlmin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;removeComments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;collapseWhitespace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;collapseBooleanAttributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;removeAttributeQuotes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;removeRedundantAttributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;minifyJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;minifyCSS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;optimized HTML&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;siteFolderName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gzip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;gzipped HTML&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;gzip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;when&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;siteFolderName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-wl&quot; data-lang=&quot;wl&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;bp&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[{}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub Gist Embed&lt;/h3&gt;
-
-&lt;p&gt;An example of a Gist embed below.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/mmistakes/77c68fbb07731a456805a7b473f47841.js&quot;&gt;&lt;/script&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="code" /><category term="syntax highlighting" /><summary type="html">Post displaying the various ways of highlighting code in Markdown.</summary></entry><entry><title type="html">Markup: Another Post with Images</title><link href="http://localhost:4000/minimal-mistakes/markup-more-images/" rel="alternate" type="text/html" title="Markup: Another Post with Images" /><published>2013-05-22T00:00:00-04:00</published><updated>2013-05-22T00:00:00-04:00</updated><id>http://localhost:4000/minimal-mistakes/markup-more-images</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/markup-more-images/">&lt;p&gt;Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;figure&lt;/code&gt; with the appropriate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt;. Each instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;figure&lt;/code&gt; is auto-numbered and displayed in the caption.&lt;/p&gt;
-
-&lt;h3 id=&quot;figures-for-images-or-video&quot;&gt;Figures (for images or video)&lt;/h3&gt;
-
-&lt;h4 id=&quot;one-up&quot;&gt;One Up&lt;/h4&gt;
-
-&lt;figure&gt;
-	&lt;a href=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg&quot;&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;&lt;a href=&quot;http://www.flickr.com/photos/80901381@N04/7758832526/&quot; title=&quot;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&quot;&gt;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
-
-&lt;h4 id=&quot;two-up&quot;&gt;Two Up&lt;/h4&gt;
-
-&lt;p&gt;Apply the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;half&lt;/code&gt; class like so to display two images side by side that share the same caption.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;half&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-1-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-2-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these two images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
-
-&lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.JPG&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.jpeg&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;Two images.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;three-up&quot;&gt;Three Up&lt;/h4&gt;
-
-&lt;p&gt;Apply the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;third&lt;/code&gt; class like so to display three images side by side that share the same caption.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;third&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-3.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these three images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
-
-&lt;figure class=&quot;third&quot;&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;figcaption&gt;Three images.&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Michael Rose</name></author><category term="sample post" /><category term="images" /><category term="test" /><summary type="html">Examples and code for displaying images in posts.</summary></entry><entry><title type="html">Markup: HTML Tags and Formatting</title><link href="http://localhost:4000/minimal-mistakes/markup/markup-html-tags-and-formatting/" rel="alternate" type="text/html" title="Markup: HTML Tags and Formatting" /><published>2013-01-11T00:00:00-05:00</published><updated>2013-01-11T00:00:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/markup/markup-html-tags-and-formatting</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/markup/markup-html-tags-and-formatting/">&lt;p&gt;A variety of common markup showing how the theme styles them.&lt;/p&gt;
-
-&lt;h2 id=&quot;header-two&quot;&gt;Header two&lt;/h2&gt;
-
-&lt;h3 id=&quot;header-three&quot;&gt;Header three&lt;/h3&gt;
-
-&lt;h4 id=&quot;header-four&quot;&gt;Header four&lt;/h4&gt;
-
-&lt;h5 id=&quot;header-five&quot;&gt;Header five&lt;/h5&gt;
-
-&lt;h6 id=&quot;header-six&quot;&gt;Header six&lt;/h6&gt;
-
-&lt;h2 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h2&gt;
-
-&lt;p&gt;Single line blockquote:&lt;/p&gt;
+&lt;p&gt;Neste exemplo, a função linear_search é usada para procurar o valor 42 no array. A função retorna o índice 5, que é o índice do valor 42 no array. Em seguida, uma mensagem é exibida informando que o valor foi encontrado no índice 5 do array.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html"></summary></entry><entry><title type="html">O Que Voce Precisa Saber Sobre Ruby</title><link href="http://localhost:4000/o-que-voce-precisa-saber-sobre-ruby/" rel="alternate" type="text/html" title="O Que Voce Precisa Saber Sobre Ruby" /><published>2023-03-31T00:00:00-04:00</published><updated>2023-03-31T00:00:00-04:00</updated><id>http://localhost:4000/o-que-voce-precisa-saber-sobre-ruby</id><content type="html" xml:base="http://localhost:4000/o-que-voce-precisa-saber-sobre-ruby/">&lt;h3 id=&quot;aqui-estão-alguns-tópicos-interessantes-sobre-a-linguagem-ruby&quot;&gt;Aqui estão alguns tópicos interessantes sobre a linguagem Ruby:&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Stay hungry. Stay foolish.&lt;/p&gt;
+  &lt;p&gt;Ruby é uma linguagem de programação orientada a objetos, o que significa que todos os objetos em Ruby têm métodos e propriedades. Isso torna a linguagem muito flexível e permite que os desenvolvedores escrevam código mais legível e fácil de entender.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;p&gt;Multi line blockquote with a cite reference:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I’m actually as proud of the things we haven’t done as the things I have done. Innovation is saying no to 1,000 things.&lt;/p&gt;
+  &lt;p&gt;A sintaxe de Ruby é muito limpa e elegante, o que torna a linguagem fácil de ler e escrever. Além disso, a linguagem suporta muitas construções de programação funcionais e inspiradas em linguagens como Lisp e Smalltalk.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p class=&quot;small&quot;&gt;&lt;cite&gt;Steve Jobs&lt;/cite&gt; — Apple Worldwide Developers’ Conference, 1997&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Ruby é uma linguagem que suporta metaprogramação, o que significa que os desenvolvedores podem escrever código que pode modificar outros códigos em tempo de execução. Isso permite a criação de bibliotecas e frameworks poderosos, como o Rails.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Ruby tem uma biblioteca padrão muito rica, o que significa que há muitas ferramentas e recursos disponíveis para os desenvolvedores usarem sem ter que instalar bibliotecas adicionais. Isso economiza tempo e torna a linguagem mais acessível para iniciantes.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Employee&lt;/th&gt;
-      &lt;th&gt;Salary&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;John Doe&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;$1&lt;/td&gt;
-      &lt;td&gt;Because that’s all Steve Jobs needed for a salary.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;Jane Doe&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;$100K&lt;/td&gt;
-      &lt;td&gt;For all the blogging she does.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;Fred Bloggs&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;$100M&lt;/td&gt;
-      &lt;td&gt;Pictures are worth a thousand words, right? So Jane × 1,000.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;Jane Bloggs&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;$100B&lt;/td&gt;
-      &lt;td&gt;With hair like that?! Enough said.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Embora Ruby seja uma linguagem orientada a objetos, ela também suporta programação funcional. Isso permite que os desenvolvedores escrevam código mais conciso e legível, especialmente em tarefas que envolvem transformações de dados.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Foot1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Foot2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Foot3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Ruby on Rails é um framework popular para a criação de aplicativos web. É conhecido por sua simplicidade e facilidade de uso, bem como sua capacidade de criar aplicativos robustos e escaláveis em um curto período de tempo.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2 id=&quot;definition-lists&quot;&gt;Definition Lists&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;A comunidade Ruby é grande e ativa, com muitos recursos disponíveis para ajudar os desenvolvedores a aprender e usar a linguagem. Há também muitos eventos e conferências de Ruby em todo o mundo.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Hemershon Silva</name></author><summary type="html"></summary></entry><entry><title type="html">Sintaxe Ruby</title><link href="http://localhost:4000/sintaxe-ruby/" rel="alternate" type="text/html" title="Sintaxe Ruby" /><published>2023-03-31T00:00:00-04:00</published><updated>2023-03-31T00:00:00-04:00</updated><id>http://localhost:4000/sintaxe-ruby</id><content type="html" xml:base="http://localhost:4000/sintaxe-ruby/">&lt;p&gt;A sintaxe Ruby é baseada em uma estrutura simples de comandos, métodos e expressões. A seguir, são apresentados alguns exemplos da sintaxe Ruby:&lt;/p&gt;
 
-&lt;dl&gt;
-  &lt;dt&gt;Definition List Title&lt;/dt&gt;
-  &lt;dd&gt;Definition list division.&lt;/dd&gt;
-  &lt;dt&gt;Startup&lt;/dt&gt;
-  &lt;dd&gt;A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.&lt;/dd&gt;
-  &lt;dt&gt;#dowork&lt;/dt&gt;
-  &lt;dd&gt;Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.&lt;/dd&gt;
-  &lt;dt&gt;Do It Live&lt;/dt&gt;
-  &lt;dd&gt;I’ll let Bill O’Reilly &lt;a href=&quot;https://www.youtube.com/watch?v=O_HyZ5aW76c&quot; title=&quot;We&apos;ll Do It Live&quot;&gt;explain&lt;/a&gt; this one.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h2 id=&quot;unordered-lists-nested&quot;&gt;Unordered Lists (Nested)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;List item one
-    &lt;ul&gt;
-      &lt;li&gt;List item one
-        &lt;ul&gt;
-          &lt;li&gt;List item one&lt;/li&gt;
-          &lt;li&gt;List item two&lt;/li&gt;
-          &lt;li&gt;List item three&lt;/li&gt;
-          &lt;li&gt;List item four&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;List item two&lt;/li&gt;
-      &lt;li&gt;List item three&lt;/li&gt;
-      &lt;li&gt;List item four&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List item two&lt;/li&gt;
-  &lt;li&gt;List item three&lt;/li&gt;
-  &lt;li&gt;List item four&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ordered-list-nested&quot;&gt;Ordered List (Nested)&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;List item one
-    &lt;ol&gt;
-      &lt;li&gt;List item one
-        &lt;ol&gt;
-          &lt;li&gt;List item one&lt;/li&gt;
-          &lt;li&gt;List item two&lt;/li&gt;
-          &lt;li&gt;List item three&lt;/li&gt;
-          &lt;li&gt;List item four&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;List item two&lt;/li&gt;
-      &lt;li&gt;List item three&lt;/li&gt;
-      &lt;li&gt;List item four&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List item two&lt;/li&gt;
-  &lt;li&gt;List item three&lt;/li&gt;
-  &lt;li&gt;List item four&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;forms&quot;&gt;Forms&lt;/h2&gt;
-
-&lt;form&gt;
-  &lt;fieldset&gt;
-    &lt;legend&gt;Personalia:&lt;/legend&gt;
-    Name: &lt;input type=&quot;text&quot; size=&quot;30&quot; /&gt;&lt;br /&gt;
-    Email: &lt;input type=&quot;text&quot; size=&quot;30&quot; /&gt;&lt;br /&gt;
-    Date of birth: &lt;input type=&quot;text&quot; size=&quot;10&quot; /&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;
-
-&lt;h2 id=&quot;buttons&quot;&gt;Buttons&lt;/h2&gt;
-
-&lt;p&gt;Make any link standout more when applying the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.btn&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn--success&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Success Button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;p&gt;Declaração de variáveis:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nome = &quot;Maria&quot;
+idade = 25
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Primary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--success&quot;&gt;Success Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--warning&quot;&gt;Warning Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--danger&quot;&gt;Danger Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--info&quot;&gt;Info Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--inverse&quot;&gt;Inverse Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--light-outline&quot;&gt;Light Outline Button&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Primary Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Success Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--success}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Warning Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--warning}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Danger Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--danger}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Info Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--info}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Inverse Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--inverse}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Light Outline Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--light-outline}
+&lt;p&gt;Estruturas de controle:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if idade &amp;gt;= 18
+  puts &quot;Você é maior de idade&quot;
+else
+  puts &quot;Você é menor de idade&quot;
+end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--x-large&quot;&gt;X-Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--large&quot;&gt;Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--small&quot;&gt;Small Button&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Laços de repetição:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for i in 1..10
+  puts i
+end
 
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;X-Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--x-large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary }
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Small Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--small}
+10.times do |i|
+  puts i
+end
+Definindo funções:
+css
+Copy code
+def somar(a, b)
+  return a + b
+end
+
+resultado = somar(2, 3)
+puts resultado
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;notices&quot;&gt;Notices&lt;/h2&gt;
+&lt;p&gt;Trabalhando com arrays:&lt;/p&gt;
 
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice}&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;numeros = [1, 2, 3, 4, 5]
+numeros.each do |numero|
+  puts numero
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--primary&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice--primary}&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;Trabalhando com strings:&lt;/p&gt;
 
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice--info}&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nome = &quot;Maria&quot;
+mensagem = &quot;Olá, #{nome}!&quot;
+puts mensagem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice--warning}&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;Trabalhando com classes:&lt;/p&gt;
 
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice--success}&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Pessoa
+  def initialize(nome, idade)
+    @nome = nome
+    @idade = idade
+  end
+  
+  def apresentar
+    puts &quot;Meu nome é #{@nome} e tenho #{@idade} anos&quot;
+  end
+end
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice--danger}&lt;/code&gt; class.&lt;/p&gt;
+pessoa = Pessoa.new(&quot;Maria&quot;, 25)
+pessoa.apresentar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;html-tags&quot;&gt;HTML Tags&lt;/h2&gt;
+&lt;p&gt;Esses são apenas alguns exemplos da sintaxe Ruby. A linguagem também oferece muitas outras ferramentas e recursos, como metaprogramação, expressões regulares, manipulação de arquivos e muito mais.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html"></summary></entry><entry><title type="html">Descobrindo O Caminho Das Pedras</title><link href="http://localhost:4000/descobrindo-o-caminho-das-pedras/" rel="alternate" type="text/html" title="Descobrindo O Caminho Das Pedras" /><published>2023-01-21T00:00:00-05:00</published><updated>2023-01-21T00:00:00-05:00</updated><id>http://localhost:4000/descobrindo-o-caminho-das-pedras</id><content type="html" xml:base="http://localhost:4000/descobrindo-o-caminho-das-pedras/">&lt;p&gt;Continuando com a história de como sempre estudei errado, essa parte vou falar como melhorei meus estudos e desempenho na programação, como falei no post anterior comecei a melhorar depois da mentoria do DesenvolvendoMe.&lt;/p&gt;
 
-&lt;h3 id=&quot;address-tag&quot;&gt;Address Tag&lt;/h3&gt;
+&lt;p&gt;Lá aprendi a usar novas técnicas de desenvolvimento de software, e o que é preciso para melhorar como programador.&lt;/p&gt;
 
-&lt;address&gt;
-  1 Infinite Loop&lt;br /&gt; Cupertino, CA 95014&lt;br /&gt; United States
-&lt;/address&gt;
+&lt;p&gt;Estudando de maneira correta.&lt;/p&gt;
 
-&lt;h3 id=&quot;anchor-tag-aka-link&quot;&gt;Anchor Tag (aka. Link)&lt;/h3&gt;
+&lt;p&gt;vamos dizer que você está empolgado com a área de TI, são várias linguagem, vários framework, vários influenciadores, aí você começa a estudar uma tecnologia que está no hype do mercado e algumas pessoas estão comentando sobre ela, você passa uma semana ou mais estudando ela sem entender direito o que está fazendo, aí você vê o lançamento de um framework, você pensar deve ser mais fácil aprender esse framework, e você vai e muda e começa a estudar só que sem entender nada.&lt;/p&gt;
 
-&lt;p&gt;This is an example of a &lt;a href=&quot;http://apple.com&quot; title=&quot;Apple&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Chega uma hora que você se pergunta porque não estou entendendo e não consigo aprender.&lt;/p&gt;
 
-&lt;h3 id=&quot;abbreviation-tag&quot;&gt;Abbreviation Tag&lt;/h3&gt;
+&lt;p&gt;Sabe porque sua lógica pode está com falhas, mais você leu em algum lugar que não precisa de lógica de programação para aprender a programar, eu sempre penso assim, pra você fritar um ovo você precisa entender o processo e seguir passo a passo, até deixar o ovo pronto, na  programação não é diferente, você vai precisar entender o processo, regras de negócios e entender sobre o próprio negócio, a lógica vai facilitar pra você esse processo.&lt;/p&gt;
 
-&lt;p&gt;The abbreviation &lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt; stands for “Cascading Style Sheets”.&lt;/p&gt;
+&lt;p&gt;O que você precisar para fixar o estudos&lt;/p&gt;
 
-&lt;h3 id=&quot;cite-tag&quot;&gt;Cite Tag&lt;/h3&gt;
+&lt;p&gt;além de estudar o básico da linguagem, aconselho a você ir nesses sites de teste lógicos para que você comece a exercitar formas de resolver um problema, como Uri, Hackerrank, esses sites ajuda bastante, eles disponibilizar exercícios básicos ao avançado para todo os níveis, vale a pena separar uma hora diária para praticar.&lt;/p&gt;
 
-&lt;p&gt;“Code is poetry.” —&lt;cite&gt;Automattic&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;Aconselho a separar 30 minutos diários para praticar o básico da linguagem.&lt;/p&gt;
 
-&lt;h3 id=&quot;code-tag&quot;&gt;Code Tag&lt;/h3&gt;
+&lt;p&gt;E o mais importante, leia a documentação, é ali que você vai entender tudo da linguagem.&lt;/p&gt;
 
-&lt;p&gt;You will learn later on in these tests that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;word-wrap: break-word;&lt;/code&gt; will be your best friend.&lt;/p&gt;
+&lt;p&gt;Planejar um projeto e executar ele também vai ajudar na evolução.&lt;/p&gt;
 
-&lt;h3 id=&quot;strike-tag&quot;&gt;Strike Tag&lt;/h3&gt;
+&lt;p&gt;Bom essa foi  a parte do Hard Skill, só entenda o seguinte, aprender requer determinação e foco sem isso você vai continuar rodando em círculo, use um pomodoro para ajudar no foco, determine um tempo que você achar melhor para praticar o foco, geralmente uso uma hora focado sem distrações.&lt;/p&gt;
 
-&lt;p&gt;This tag will let you &lt;strike&gt;strikeout text&lt;/strike&gt;.&lt;/p&gt;
+&lt;p&gt;Agora tem a parte do soft skill.&lt;/p&gt;
 
-&lt;h3 id=&quot;emphasize-tag&quot;&gt;Emphasize Tag&lt;/h3&gt;
+&lt;p&gt;Soft skill é a arte de saber perguntar, quando você está começando no mundo da programação, você tem que perguntar muito, poder parece engraçado, mas na realidade você não entender como aquilo vai funcionar não fique com vergonha mesmo sabendo que a pessoa que vai te explicar é grossa e arrogante.&lt;/p&gt;
 
-&lt;p&gt;The emphasize tag should &lt;em&gt;italicize&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;Tinha um conhecido que ele era uma pessoa muito arrogante, toda vez que eu ia perguntar uma coisa simples ele me respondia com grosseria mais respondia, mais não seja um petelho, aprender fazer perguntas inteligentes, mais como assim perguntas inteligentes, antes de perguntar para outra pessoa vá no google que lá vai ter alguma coisa explicando de uma forma que você possivelmente não entender de cara, então anote os pontos principais e o que você não entendeu e tenta resumir de uma forma objetiva para que a pessoa que vai ouvir ou ler sua pergunta entenda, porque eu falo isso, porque a pessoa vai parar o que ela está fazendo para te ajudar, então mastiga o máximo que você puder para facilitar a resposta ou até mesmo irem juntos procurar uma solução.&lt;/p&gt;
 
-&lt;h3 id=&quot;insert-tag&quot;&gt;Insert Tag&lt;/h3&gt;
+&lt;p&gt;Nas suas conversas aprender a ser objetivo, fazer rodeio mesmo sabendo o que está falando pode ser cansativo para quem está ouvindo, bateu a dúvida anote, geralmente eu anoto tudo no keep do google, depois vou lá e organizo minhas dúvidas e perguntas, antes de fazer a pergunta eu dou uma revisada e tento resumir e se bem objetivo, se caso a pessoa que está ouvindo não entender eu explico de uma forma mais detalhada.&lt;/p&gt;
 
-&lt;p&gt;This tag should denote &lt;ins&gt;inserted&lt;/ins&gt; text.&lt;/p&gt;
+&lt;p&gt;Tenha sempre foco e determinação, pense assim seus estudos são como uma construção de um prédio, se você não fizer uma estrutura forte na sua base, ele vai sempre balançar.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html"></summary></entry><entry><title type="html">Estudando Programacao</title><link href="http://localhost:4000/estudando-programacao/" rel="alternate" type="text/html" title="Estudando Programacao" /><published>2023-01-21T00:00:00-05:00</published><updated>2023-01-21T00:00:00-05:00</updated><id>http://localhost:4000/estudando-programacao</id><content type="html" xml:base="http://localhost:4000/estudando-programacao/">&lt;p&gt;Estudando Programação&lt;/p&gt;
 
-&lt;h3 id=&quot;keyboard-tag&quot;&gt;Keyboard Tag&lt;/h3&gt;
+&lt;p&gt;Como identifiquei que sempre estudei errado.&lt;/p&gt;
 
-&lt;p&gt;This scarcely known tag emulates &lt;kbd&gt;keyboard text&lt;/kbd&gt;, which is usually styled like the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
-
-&lt;h3 id=&quot;preformatted-tag&quot;&gt;Preformatted Tag&lt;/h3&gt;
-
-&lt;p&gt;This tag styles large blocks of code.&lt;/p&gt;
-
-&lt;pre&gt;
-.post-title {
-	margin: 0 0 5px;
-	font-weight: bold;
-	font-size: 38px;
-	line-height: 1.2;
-	and here&apos;s a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
-}
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;quote-tag&quot;&gt;Quote Tag&lt;/h3&gt;
-
-&lt;p&gt;&lt;q&gt;Developers, developers, developers…&lt;/q&gt; –Steve Ballmer&lt;/p&gt;
-
-&lt;h3 id=&quot;strong-tag&quot;&gt;Strong Tag&lt;/h3&gt;
-
-&lt;p&gt;This tag shows &lt;strong&gt;bold text&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;subscript-tag&quot;&gt;Subscript Tag&lt;/h3&gt;
-
-&lt;p&gt;Getting our science styling on with H&lt;sub&gt;2&lt;/sub&gt;O, which should push the “2” down.&lt;/p&gt;
-
-&lt;h3 id=&quot;superscript-tag&quot;&gt;Superscript Tag&lt;/h3&gt;
-
-&lt;p&gt;Still sticking with science and Albert Einstein’s E = MC&lt;sup&gt;2&lt;/sup&gt;, which should lift the 2 up.&lt;/p&gt;
-
-&lt;h3 id=&quot;variable-tag&quot;&gt;Variable Tag&lt;/h3&gt;
-
-&lt;p&gt;This allows you to denote &lt;var&gt;variables&lt;/var&gt;.&lt;/p&gt;</content><author><name>Michael Rose</name></author><category term="Markup" /><category term="content" /><category term="css" /><category term="formatting" /><category term="html" /><category term="markup" /><summary type="html">A variety of common markup showing how the theme styles them.</summary></entry><entry><title type="html">Markup: Image Alignment</title><link href="http://localhost:4000/minimal-mistakes/markup/markup-image-alignment/" rel="alternate" type="text/html" title="Markup: Image Alignment" /><published>2013-01-10T00:00:00-05:00</published><updated>2013-01-10T00:00:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/markup/markup-image-alignment</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/markup/markup-image-alignment/">&lt;p&gt;Welcome to image alignment! The best way to demonstrate the ebb and flow of the various image positioning options is to nestle them snuggly among an ocean of words. Grab a paddle and let’s get started.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-580x300.jpg&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The image above happens to be &lt;strong&gt;centered&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-150x150.jpg&quot; alt=&quot;image-left&quot; class=&quot;align-left&quot; /&gt; The rest of this paragraph is filler for the sake of seeing the text wrap around the 150×150 image, which is &lt;strong&gt;left aligned&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;As you can see there should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we’ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it’s thing. Mission accomplished!&lt;/p&gt;
-
-&lt;p&gt;And now for a &lt;strong&gt;massively large image&lt;/strong&gt;. It also has &lt;strong&gt;no alignment&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-1200x4002.jpg&quot; alt=&quot;no-alignment&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The image above, though 1200px wide, should not overflow the content area. It should remain contained with no visible disruption to the flow of content.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-300x200.jpg&quot; alt=&quot;image-right&quot; class=&quot;align-right&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And now we’re going to shift things to the &lt;strong&gt;right align&lt;/strong&gt;. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there — Hey guy! Way to rock that right side. I don’t care what the left aligned image says, you look great. Don’t let anyone else tell you differently.&lt;/p&gt;
-
-&lt;p&gt;In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah — Just like that. It never felt so good to be right.&lt;/p&gt;
-
-&lt;p&gt;And just when you thought we were done, we’re going to do them all over again with captions!&lt;/p&gt;
-
-&lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-580x300.jpg&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;Look at 580 x 300 getting some love.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The figure above happens to be &lt;strong&gt;centered&lt;/strong&gt;. The caption also has a link in it, just to see if it does anything funky.&lt;/p&gt;
-
-&lt;figure style=&quot;width: 150px&quot; class=&quot;align-left&quot;&gt;
-  &lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-150x150.jpg&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;Itty-bitty caption.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The rest of this paragraph is filler for the sake of seeing the text wrap around the 150×150 image, which is &lt;strong&gt;left aligned&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;As you can see there should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we’ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it’s thing. Mission accomplished!&lt;/p&gt;
-
-&lt;p&gt;And now for a &lt;strong&gt;massively large image&lt;/strong&gt;. It also has &lt;strong&gt;no alignment&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;figure style=&quot;width: 1200px&quot;&gt;
-  &lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-1200x4002.jpg&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;Massive image comment for your eyeballs.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The figure element above has an inline style of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;width: 1200px&lt;/code&gt; set which should break it outside of the normal content flow.&lt;/p&gt;
-
-&lt;figure style=&quot;width: 300px&quot; class=&quot;align-right&quot;&gt;
-  &lt;img src=&quot;http://localhost:4000/minimal-mistakes/assets/images/image-alignment-300x200.jpg&quot; alt=&quot;&quot; /&gt;
-  &lt;figcaption&gt;Feels good to be right all the time.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;And now we’re going to shift things to the &lt;strong&gt;right align&lt;/strong&gt;. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there — Hey guy! Way to rock that right side. I don’t care what the left aligned image says, you look great. Don’t let anyone else tell you differently.&lt;/p&gt;
-
-&lt;p&gt;In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah — Just like that. It never felt so good to be right.&lt;/p&gt;
-
-&lt;p&gt;And that’s a wrap, yo! You survived the tumultuous waters of alignment. Image alignment achievement unlocked!&lt;/p&gt;</content><author><name>Michael Rose</name></author><category term="Markup" /><category term="alignment" /><category term="captions" /><category term="content" /><category term="css" /><category term="image" /><category term="markup" /><summary type="html">Welcome to image alignment! The best way to demonstrate the ebb and flow of the various image positioning options is to nestle them snuggly among an ocean of words. Grab a paddle and let’s get started.</summary></entry><entry><title type="html">Markup: Text Alignment</title><link href="http://localhost:4000/minimal-mistakes/markup/markup-text-alignment/" rel="alternate" type="text/html" title="Markup: Text Alignment" /><published>2013-01-09T00:00:00-05:00</published><updated>2013-01-09T00:00:00-05:00</updated><id>http://localhost:4000/minimal-mistakes/markup/markup-text-alignment</id><content type="html" xml:base="http://localhost:4000/minimal-mistakes/markup/markup-text-alignment/">&lt;h3 id=&quot;default&quot;&gt;Default&lt;/h3&gt;
-
-&lt;p&gt;This is a paragraph. It should not have any alignment of any kind. It should just flow like you would normally expect. Nothing fancy. Just straight up text, free flowing, with love. Completely neutral and not picking a side or sitting on the fence. It just is. It just freaking is. It likes where it is. It does not feel compelled to pick a side. Leave him be. It will just be better that way. Trust me.&lt;/p&gt;
-
-&lt;h3 id=&quot;left-align&quot;&gt;Left Align&lt;/h3&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;This is a paragraph. It is left aligned. Because of this, it is a bit more liberal in it’s views. It’s favorite color is green. Left align tends to be more eco-friendly, but it provides no concrete evidence that it really is. Even though it likes share the wealth evenly, it leaves the equal distribution up to justified alignment.&lt;/p&gt;
-
-&lt;h3 id=&quot;center-align&quot;&gt;Center Align&lt;/h3&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;This is a paragraph. It is center aligned. Center is, but nature, a fence sitter. A flip flopper. It has a difficult time making up its mind. It wants to pick a side. Really, it does. It has the best intentions, but it tends to complicate matters more than help. The best you can do is try to win it over and hope for the best. I hear center align does take bribes.&lt;/p&gt;
-
-&lt;h3 id=&quot;right-align&quot;&gt;Right Align&lt;/h3&gt;
-
-&lt;p style=&quot;text-align: right;&quot;&gt;This is a paragraph. It is right aligned. It is a bit more conservative in it’s views. It’s prefers to not be told what to do or how to do it. Right align totally owns a slew of guns and loves to head to the range for some practice. Which is cool and all. I mean, it’s a pretty good shot from at least four or five football fields away. Dead on. So boss.&lt;/p&gt;
-
-&lt;h3 id=&quot;justify-align&quot;&gt;Justify Align&lt;/h3&gt;
-
-&lt;p style=&quot;text-align: justify;&quot;&gt;This is a paragraph. It is justify aligned. It gets really mad when people associate it with Justin Timberlake. Typically, justified is pretty straight laced. It likes everything to be in it’s place and not all cattywampus like the rest of the aligns. I am not saying that makes it better than the rest of the aligns, but it does tend to put off more of an elitist attitude.&lt;/p&gt;</content><author><name>Michael Rose</name></author><category term="Markup" /><category term="alignment" /><category term="content" /><category term="css" /><category term="markup" /><summary type="html">Default</summary></entry></feed>
+&lt;p&gt;Mais uma história dessa saga de se tornar um programador.
+Quando comecei na programação há alguns anos atrás, fiquei muito perdido, como assim tem um caminho a seguir, lógica de programação, depois… ai que está o depois que é o obstáculo.
+Você não sabe o que estudar, o que é relevante para sua carreira, por isso que muitos iniciantes desistem ou até mesmo demoram a encontrar o caminho relevante.
+Imagina um iniciante estudando tudo pela frente ou pior, seguindo um passo a passo sem entender muito bem o que é o que faz e quais problemas você consegue resolver com a ferramenta.
+Então essa era minha rotina diária de estudos, depois de um certo tempo conversando com meu irmão ele me mostrou uma tecnologia nova gostei dela e fui estudar-lá.
+Só que tinha um problema, eu não tinha autogestão, então como ia estudar sem os controles principais foco e persistência, foi assim que fiquei por anos sem entender direito sobre o assunto, aí me tornei um programador mediano, não sabia usar a ferramenta direito e não conhecia todo o poder que a ferramenta tinha, nisso ficava bastante frustrado em minha capacidade técnica, passei por algumas empresas que pioraram minha frustração, e tinha o lado que não conseguia identificar meus erros, sempre me dedicando bastante para melhorar, depois do trabalho eu estudava bastante  e nada de evoluir. 
+Fui entrando e saindo das empresas com a mesma frustração de não conseguir entregar algo de valor para empresa. 
+Na minha saga de melhorar como programador, fui para em uma entrevista com tech lead Marco, que isso é assunto para outro post.
+Foi aí que descobri que meus estudos estavam errados, não tinha base lógica, nem soft skill e nem hard skill, fui descobrindo isso quando comecei a acompanhar sua mentoria, nela descobri que um programador precisa ter uma caixa de ferramenta para melhorar como profissional, depois de muito tempo que fui entender o verdadeiro caminho das pedras.&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><summary type="html">Estudando Programação</summary></entry></feed>

@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "About"
+title: "Sobre"
 excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
 layouts_gallery:
   - url: /assets/images/mm-layout-splash.png
@@ -16,13 +16,55 @@ last_modified_at: 2022-05-27T11:59:26-04:00
 toc: true
 ---
 
-Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your personal site, blog, or portfolio on GitHub or self-hosting on your own server. As the name implies --- styling is purposely minimalistic to be enhanced and customized by you :smile:.
 
-{% include gallery id="layouts_gallery" caption="Examples of included layouts `splash`, `single`, and `archive`." %}
 
-[Install the Theme]({{ "/docs/quick-start-guide/" | relative_url }}){: .btn .btn--success .btn--large}
+## Sobre mim!
 
-## Notable Features
+Tenho uma grande bagagem na área de tecnologia, estou por aqui desde 1998, quando acessei pela primeira vez o site da AOL. 
+
+Sou formador em Ciência da computação e Engenharia de software pela Estácio, trabalho com desenvolvimento web desde 2012 quando me dediquei a fundo a linguagem Ruby e Ruby on Rails, onde aprendir a usar ferramentas que envolver o ecosistema Rails. 
+
+## Falo das skill nesses posts
+
+| Name                                        | Description                                           |
+| ------------------------------------------- | ----------------------------------------------------- |
+| [Posts by Category][category-archive] | A post with a large header image. |
+| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
+| [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
+| [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
+| [Sample Collection Page][sample-collection] | Single page from a collection. |
+| [Categories Archive][categories-archive] | Posts grouped by category. |
+| [Tags Archive][tags-archive] | Posts grouped by tag. |
+
+Mysql 
+
+MongoDB 
+
+Redis 
+
+Sidekiq 
+
+Active jobs 
+
+Sass 
+
+Node Package Manager(npm) 
+
+Bootstrap 
+
+Postman 
+
+Docker e o compose 
+
+Kubernetes 
+
+Nginx 
+
+ReactJS 
+
+Vue.js 
+
+Elasticsearch 
 
 - Bundled as a "theme gem" for easier install/upgrading.
 - Compatible with GitHub Pages.

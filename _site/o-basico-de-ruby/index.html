@@ -1,0 +1,810 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>O Basico De Ruby - Hemershon Silva</title>
+<meta name="description" content="title: “O básico de Ruby” categories:    ruby   programação   sitaxe   iniciante tags:   ruby   iniciante   lógica     Continuando com a saga de como se tornar um programador, agora vou falar sobre o básico da linguagem ruby, não irei contar a história de ruby e nem como instalar, vou adicionar links que vai ajudar você a lê e instalar.">
+
+
+  <meta name="author" content="Hemershon Silva">
+  
+  <meta property="article:author" content="Hemershon Silva">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hemershon Silva">
+<meta property="og:title" content="O Basico De Ruby">
+<meta property="og:url" content="http://localhost:4000/o-basico-de-ruby/">
+
+
+  <meta property="og:description" content="title: “O básico de Ruby” categories:    ruby   programação   sitaxe   iniciante tags:   ruby   iniciante   lógica     Continuando com a saga de como se tornar um programador, agora vou falar sobre o básico da linguagem ruby, não irei contar a história de ruby e nem como instalar, vou adicionar links que vai ajudar você a lê e instalar.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-logo.png">
+
+
+
+  <meta name="twitter:site" content="@mmistakes">
+  <meta name="twitter:title" content="O Basico De Ruby">
+  <meta name="twitter:description" content="title: “O básico de Ruby” categories:    ruby   programação   sitaxe   iniciante tags:   ruby   iniciante   lógica     Continuando com a saga de como se tornar um programador, agora vou falar sobre o básico da linguagem ruby, não irei contar a história de ruby e nem como instalar, vou adicionar links que vai ajudar você a lê e instalar.">
+  <meta name="twitter:url" content="http://localhost:4000/o-basico-de-ruby/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-01-21T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/o-basico-de-ruby/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hemershon Silva",
+      "url": "http://localhost:4000/",
+      "sameAs": ["https://twitter.com/mmistakes","https://www.facebook.com/michaelrose"]
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hemershon Silva Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Hemershon Silva
+          <span class="site-subtitle">Velho do código</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Sample Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/">Sample Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms &amp; Privacy Policy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/michael-rose.jpg" alt="Hemershon Silva" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Hemershon Silva</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Just another <em>boring</em>, <em>tattooed</em>, <em>time traveling</em>, <em>designer</em>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Buffalo, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://mademistakes.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Made Mistakes</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="O Basico De Ruby">
+    <meta itemprop="description" content="title: “O básico de Ruby”categories:  ruby  programação  sitaxe  iniciantetags:  ruby  iniciante  lógicaContinuando com a saga de como se tornar um programador, agora vou falar sobre o básico da linguagem ruby, não irei contar a história de ruby e nem como instalar, vou adicionar links que vai ajudar você a lê e instalar.">
+    <meta itemprop="datePublished" content="2023-01-21T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">O Basico De Ruby
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        
+<hr />
+<p>title: “O básico de Ruby”
+categories:</p>
+<ul>
+  <li>ruby</li>
+  <li>programação</li>
+  <li>sitaxe</li>
+  <li>iniciante
+tags:</li>
+  <li>ruby</li>
+  <li>iniciante</li>
+  <li>lógica</li>
+</ul>
+
+<hr />
+<p>Continuando com a saga de <em>como se tornar um programador</em>, agora vou falar sobre o básico da linguagem ruby, não irei contar a história de ruby e nem como instalar, vou adicionar links que vai ajudar você a lê e instalar.</p>
+
+<p>Vamos entender primeiro o que é o básico do Ruby, o básico é o que serve como base, essencial e relevante e principalmente fundamental para sua carreira, entendido isso, não tenha dúvida que esse estudo é obrigatório para entender como funciona a linguagem.</p>
+
+<h2 id="tipos-de-dados">Tipos de dados</h2>
+
+<p>No ruby não existem tipos primitivos, todos os tipos são classes</p>
+<ul>
+  <li>Object é a classe mãe de todas as outras classes em Ruby</li>
+  <li>Numeric é uma classe abstrata que representa números</li>
+  <li>Integer é uma classe que representa números inteiros</li>
+  <li>Fixnum representa números inteiros de precisão fixa</li>
+  <li>Bignum representa números inteiros de precisão infinita, dependente apenas da memória disponível</li>
+  <li>Float é uma classe que representa números de ponto flutuante(números reais)</li>
+  <li>String uma cadeia de caracteres. Pode ser delimitado por apóstrofes(‘)ou aspas(“). Tudo o que há entre apóstrofes literalmente, entres aspas o programador deve utilizar de símbolos para representar caracteres específicos, como C. Exemplo: ‘azul’, “a\nb\nc\”</li>
+  <li>Symbol é semelhante a uma string, mas dois símbolos iguais possuem o mesmo endereço de memória, sendo assim é ótimo para se utilizar como índice numa Hash. Porém, devido à sua natureza, o coletor de lixo de ruby não os elimina. É definido com um sinal de dois pontos (:), por exemplo, :none</li>
+  <li>Array são arrays dinâmicos, que podem ser usados para representar matrizes e vetores. É delimitado por colchetes([]) e cada valor é separado por vírgula. Exemplo: [4, ‘azul’, :termometro]</li>
+  <li>Hash representa um vetor associativo, e, assim como as Arrays, é dinâmica. É delimitada por chaves ({}), e o índice precede o valor com um sinal ‘=&gt;’. Exemplo: {:controller =&gt;’user’, :action = ‘index’}.</li>
+</ul>
+
+<p>Qualquer objeto pode ser índice, mas os mais usados são as Strings e os Symbols</p>
+<ul>
+  <li>Regex representa expressões regulares, delimitadas por //.
+  Funciona de forma semelhante a Perl. Exemplo: 
+  /a|ae/</li>
+</ul>
+
+<p>Esses são os tipos de dados usados na linguagem desde o início.</p>
+
+<p>Entenda isso e você vai entender a linguagem.</p>
+
+<p>Um dos conceitos básicos da linguagem é a declaração das variáveis, que basta uma associação entre um nome e um valor que é pronto é criada uma variável.</p>
+
+<p>Exemplo:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Ano</span> <span class="o">=</span> <span class="mi">37</span>
+</code></pre></div></div>
+<p>Para você testar, vamos usar o interpretador do ruby que é o IRB(Interactive Ruby Shell).
+Vá no seu terminal e digite irb, veja que ele vai abrir</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">╰─</span> <span class="n">irb</span>                       
+<span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span>
+</code></pre></div></div>
+<p>Um console que abre informando a versão do seu ruby e o número de vezes que ele foi usado.</p>
+
+<p>No primeiro exemplo declaramos uma variável do tipo inteiro que ela vai ser chamada de ano e atribuímos o valor 37 nela, mais como o interpretador sabe que ali tem uma variável do tipo inteiro.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ano</span> <span class="o">=</span> <span class="mi">37</span>
+</code></pre></div></div>
+
+<p>Ruby tem um intérpretador que infere o tipo de variável durante a execução do código.</p>
+
+<p>Uma forma interessante para você identificar o tipo da variável</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ano</span> <span class="o">=</span> <span class="mi">37</span> 
+<span class="nb">puts</span> <span class="n">ano</span><span class="p">.</span><span class="nf">class</span>
+</code></pre></div></div>
+
+<p>Você pediu para o puts mostrar o tipo da variável ano.
+ Que o resultado vai ser :</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">╰─</span> <span class="n">irb</span>                          
+<span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="n">ano</span> <span class="o">=</span> <span class="mi">37</span> 
+ <span class="o">=&gt;</span> <span class="mi">37</span> 
+<span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">:</span><span class="mo">002</span> <span class="o">&gt;</span> <span class="nb">puts</span> <span class="n">ano</span><span class="p">.</span><span class="nf">class</span>
+<span class="no">Integer</span>
+ <span class="o">=&gt;</span> <span class="kp">nil</span> 
+<span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> 
+</code></pre></div></div>
+
+<p>Quando chamamos o <strong>.class</strong> depois de qualquer variável ele trás o tipo de variável.</p>
+
+<h2 id="tipagem">Tipagem</h2>
+
+<p>Qual é a diferença entre tipagens;</p>
+
+<h3 id="estática">Estática</h3>
+
+<p>Tipagem estática é quando definimos explicitamente o tipo de variáveis de um software no código que na hora da compilação do código ele é conhecido e checado.</p>
+
+<p>Linguagem que usam tipagem estáticas 
+Java, C#, F#, Kotlin, Go.</p>
+
+<p>Essa análise ajuda na chamada de segurança de tipos na utilização dos dados pelo programador.</p>
+
+<h3 id="dinâmica">Dinâmica</h3>
+
+<p>A tipagem dinâmica também é verificada mais de uma maneira diferente, ela verifica direto os tipos de dados.</p>
+
+<p>Linguagem que usam tipagens dinâmicas
+Ruby, Python, Clojure, Elixir.</p>
+
+<h3 id="forte">Forte</h3>
+<p>A tipagem forte não realiza conversões automaticamente.</p>
+
+<h3 id="fraca">Fraca</h3>
+
+<p>A tipagem fraca, vem da característica da linguagem de realizar conversões automaticamente entre diferentes tipos de dados.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-01-21T00:00:00-05:00">January 21, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=mmistakes&text=O+Basico+De+Ruby%20http%3A%2F%2Flocalhost%3A4000%2Fo-basico-de-ruby%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fo-basico-de-ruby%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fo-basico-de-ruby%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/gem-para-projetos/" class="pagination--pager" title="Gem Para Projetos
+">Previous</a>
+    
+    
+      <a href="/problemas-encontrado-para-estudar-programacao/" class="pagination--pager" title="Problemas Encontrado Para Estudar Programacao
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+              style="display:block; border-bottom: initial;"
+              data-ad-client="ca-pub-7328585512091257"
+              data-ad-slot="3049671934"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+      </div>
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/" rel="permalink">Criando um ambiente Rails
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Criando o ambiente de desenvolvimento web Ruby on Rails
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web/html/css/iniciante/o-basico-de-html/" rel="permalink">O básico de HTML
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Vou explicar a base do HTML de forma didática!
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web/trilha-profissional/" rel="permalink">Trilha Profissional
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Olá a todos,
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basico-de-tdd-usando-ruby/" rel="permalink">Basico De Tdd Usando Ruby
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Básico de TDD usando Ruby
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+      <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+             style="display:block; border-bottom: initial;"
+             data-ad-client="ca-pub-7328585512091257"
+             data-ad-slot="3049671934"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Hemershon Silva. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'QB6HVGBSBA',
+  apiKey: '9d5014e5bbc77372547bce778dfa5663',
+  indexName: 'minimal_mistakes',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+    <style>
+      .google-auto-placed {
+        margin: 2em auto;
+      }
+    </style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  </body>
+</html>

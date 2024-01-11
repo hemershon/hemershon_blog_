@@ -1,0 +1,979 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Criando um ambiente Rails - Hemershon Silva</title>
+<meta name="description" content="Criando o ambiente de desenvolvimento web Ruby on Rails">
+
+
+  <meta name="author" content="Hemershon Silva">
+  
+  <meta property="article:author" content="Hemershon Silva">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hemershon Silva">
+<meta property="og:title" content="Criando um ambiente Rails">
+<meta property="og:url" content="http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/">
+
+
+  <meta property="og:description" content="Criando o ambiente de desenvolvimento web Ruby on Rails">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-logo.png">
+
+
+
+  <meta name="twitter:site" content="@mmistakes">
+  <meta name="twitter:title" content="Criando um ambiente Rails">
+  <meta name="twitter:description" content="Criando o ambiente de desenvolvimento web Ruby on Rails">
+  <meta name="twitter:url" content="http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-12-16T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iniciante/rails/ruby/postgresql/linux/git/redis/criando-ambiente-rails/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hemershon Silva",
+      "url": "http://localhost:4000/",
+      "sameAs": ["https://twitter.com/mmistakes","https://www.facebook.com/michaelrose"]
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hemershon Silva Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Hemershon Silva
+          <span class="site-subtitle">Velho do código</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Sample Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/">Sample Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/terms/">Terms &amp; Privacy Policy</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/michael-rose.jpg" alt="Hemershon Silva" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Hemershon Silva</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Just another <em>boring</em>, <em>tattooed</em>, <em>time traveling</em>, <em>designer</em>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Buffalo, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://mademistakes.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Made Mistakes</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Criando um ambiente Rails">
+    <meta itemprop="description" content="Criando o ambiente de desenvolvimento web Ruby on Rails">
+    <meta itemprop="datePublished" content="2023-12-16T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Criando um ambiente Rails
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Criando o ambiente de desenvolvimento web Ruby on Rails</p>
+
+<p>Olá, antes de começar o tutorial vou contar uma pequena experiência nessa instalação de ambiente. Quando comecei com ruby on rails alguns anos atrás sofri bastante com a preparação deste ambiente, minhas primeiras tentativas de configuração foram horríveis, sempre dava erro, sem falar que existem milhões de tutoriais explicando como configurar esse ambiente e nenhum tinha feedback, até mesmo agora quando troquei de computador precisei correr atrás de um tutorial para criar esse ambiente. Então não se preocupe se não conseguir de primeira ou se você não entendeu algo, meu e-mail está à disposição para suas dúvidas, vou explicar de uma forma simples e bem didática, espero que gostem!!!</p>
+
+<p>Para funcionar o Ruby on Rails em nossas máquinas precisamos configurar com algumas dependências que fazem com que RoR possa funcionar perfeitamente em sua máquina e ajudar muito no seu dia dia, mas não estranhe quando se deparar com outras dependências, pois ao longo do tutorial vou explicando as funcionalidades.</p>
+
+<p>Instalando o Ruby on rails com dependências necessárias Antes, você precisa atualizar seu Debian</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt update
+sudo apt upgrade
+</code></pre></div></div>
+<p>Isso vai atualizar seu sistema e deixar ele redondo para o resto das instalações</p>
+
+<p>Próximo passo é para o git.</p>
+
+<p>sudo apt install git
+O que é git?</p>
+
+<p>Git é um sistema de controle de versão de arquivos e através deles podemos desenvolver projetos nos quais diversas pessoas podem contribuir simultaneamente no mesmo projeto, e como seria? Editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem subescritas.</p>
+
+<p>após a instalação vamos para configuração</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config ---global user.name "seu nome"
+git config –global user.email "seu email"
+</code></pre></div></div>
+<p>essa configuração é para o git entender de quem é os commits e se tem autorização. Caso você não entendeu, vou falar mais sobre git na próximo tutorial.</p>
+
+<p>O que é nodejs?</p>
+
+<p>Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.</p>
+
+<p>Antes de instalar o nodejs precisamos do repositório</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo curl -sSL https://deb.nodesource.com/setup_16.x | sudo bash -
+</code></pre></div></div>
+<p>agora vamos a instalação</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install nodejs
+</code></pre></div></div>
+<p>O que é Yarn</p>
+
+<p>É um gerenciador ( dependências) de pacotes javascript que podemos via linha de comandos, baixar pacotes para nossa aplicação que foram desenvolvidos por outras pessoas, além de poder compartilhar também, além de ser uma alternativa ao npm.</p>
+
+<p>Agora vamos instalar o Yarn, como você vai ver aqui, essa instalação é um pouco complexa porque vai precisar de uma chave GPG</p>
+
+<p>O que é GPG?</p>
+
+<p>GPG é uma criptografia assimétrica, ou seja, emprega um par de chaves para alcançar seu objetivo – uma chave pública e uma chave privada.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add
+</code></pre></div></div>
+<p>também vamos adicionar o repositório do Yarn</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+</code></pre></div></div>
+<p>Finalmente vamos a instalação do yarn</p>
+
+<p>O Yarn usa o mesmo package.json que já temos no projeto em JavaScript e não adiciona nenhuma outra dependência,utilizando o mesmo repositório que o NPM já roda.</p>
+
+<p>Qual a vantagem do Yarn?</p>
+
+<p>Uma das vantagens do Yarn é ele ser mais rápido, tende a resolver alguns conflitos de versão de módulo, cria um cash local para caso você já tenha utilizado algum módulo qualquer com Yarn, essa versão específica já fica salva na sua máquina e caso você precise usar em outro projeto, ela utiliza do cash e não precisa baixar um novo, além disso, resolve algumas coisas interessantes como, por exemplo, é muito comum fazermos:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install yarn
+</code></pre></div></div>
+<p>Agora vamos para o tão esperado rvm</p>
+
+<p>O que é o RVM?</p>
+
+<p>RVM é acrônimo para Ruby Version Manager, uma ferramenta de linha de comando que possibilita instalar e gerenciar diversas versões do Ruby e suas gems. Usar o RVM facilita a transição entre versões do Ruby e versões das gems. Usar o RMV é muito simples, o único requisito básico é um ambiente POSIX (linux, bsd, etc), nesse tutorial vou instalar no Mac, basta abrir o terminal e executar o comando abaixo:</p>
+
+<p>Sem mais delogas vamos direto para instalação</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\curl -sSL https://get.rvm.io | bash
+</code></pre></div></div>
+<p>agora vamos dar um endereço para o seu bash executar o rvm no</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ~/.rvm/scripts/rvm
+</code></pre></div></div>
+<p>Source port é o nome dado à portabilização de um programa que é geralmente apenas um arquivo executável que foi modificado a partir do código de fonte do programa original e substituiu o executável original, para que possa ser rodado em uma outra plataforma para a qual não foi originalmente escrito.</p>
+
+<p>vou falar mais sobre rvm e suas versões no próximo tutorial, no momento vamos instalar essa versão</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install 3.2.2
+</code></pre></div></div>
+<p>Vamos usar essa versão</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm use 3.2.2
+</code></pre></div></div>
+<p>Os Ideais do Criador do Ruby</p>
+
+<p>O Ruby é uma linguagem com um cuidadoso equilíbrio. O seu criador, Yukihiro “Matz” Matsumoto, uniu partes das suas linguagens favoritas (Perl, Smalltalk, Lisp e outros) para formar uma nova linguagem que equilibra a programação funcional com a programação imperativa. Ele disse com frequência que está “tentando tornar o Ruby natural, não simples”, de uma forma que reflita a vida. Elaborando sobre isto, acrescenta: O Ruby é simples na aparência, mas muito complexo no interior, tal como o corpo humano.</p>
+
+<p>RubyGems</p>
+
+<p>RubyGems é um gerenciador de pacotes para a linguagem de programação Ruby que provê um formato padrão para a distribuição de programas Ruby e bibliotecas em um formato auto-suficiente chamado de gem (“jóia”, do inglês), uma ferramenta projetada para gerenciar facilmente a instalação de gems, e um servidor para distribuí-los. RubyGems foi criado em volta de novembro de 2003 e agora faz parte da biblioteca padrão do Ruby versão 1.9 a diante.</p>
+
+<p>Redis Isso deve ser novo pra você certo ou não?</p>
+
+<p>vamos usar o redis nesse ambiente nos próximos tutoriais, vou me aprofundar nesse banco não relacional,</p>
+
+<p>a instalação dele é meia complexa, mais é só seguir meus passos que você vai conseguir</p>
+
+<p>Redis: o que é, e para que serve?</p>
+
+<p>um banco de dados não relacional, também conhecido por NOSQL (Not Only SQL), que foi criado por Salvatore Sanfiippo e liberado em forma open-source em 2009. Redis significa REmote DIctionary Server, e pelo seu significado, já podemos ter uma ideia de como ele trabalha e armazena os dados. Os dados são armazenados na forma de chave-valor, lembrando a estrutura do Dictionary do .net e do Map do Java. Um ponto importante que vale chamar a atenção aqui, é que o valor utilizado como chave no Redis pode possuir diferentes formatos, podendo ser strings, hashes, lists, sets e sets ordenados.z vai fazer o download</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://download.redis.io/redis-stable.tag.gz
+</code></pre></div></div>
+<p>logo em seguida vamos descompactar o aquivo baixado</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar xvzf redis-stable.tar.gz
+</code></pre></div></div>
+<p>você precisa entrar no diretório da pasta redis-stable</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd redis-stable
+</code></pre></div></div>
+<p>já dentro da pasta vamos a instalação</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+make test
+</code></pre></div></div>
+<p>Aguarde…☕</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo make install
+</code></pre></div></div>
+<p>tudo certo?</p>
+
+<p>Agora vamos executar</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-server –daemonize yes
+</code></pre></div></div>
+<p>O Redis é extremamente rápido, tanto para escrita como para leitura dos dados, graças ao fato de armazenar seus dados em memória. Apesar disso, o Redis permite que os dados sejam persistidos fisicamente caso desejado.</p>
+
+<p>Agora vamos para a instalação do postgresql</p>
+
+<p>bom vou usar esse banco de dados para nossas aulas, mais caso queira usar outro banco fique a vontade. Por padrão o Rails usa o SQLite3 pois é bem simples, versátil e consegue se comportar bem em um ambiente de desenvolvimento.</p>
+
+<p>Instalação do postgresql</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install postgresql
+</code></pre></div></div>
+<p>O que é o PostgreSQL?</p>
+
+<p>O PostgreSQL é um sistema de gerenciamento de banco de dados objeto-relacional baseado no POSTGRES Versão 4.2 desenvolvido pelo Departamento de Ciência da Computação da Universidade da Califórnia em Berkeley. O POSTGRES foi pioneiro de vários conceitos que somente se tornaram disponíveis muito mais tarde em alguns sistemas de banco de dados comerciais.</p>
+
+<p>O PostgreSQL é um descendente de código fonte aberto deste código original de Berkeley, que suporta grande parte do padrão SQL e oferece muitas funcionalidades modernas, como:</p>
+
+<p>comandos complexos
+chaves estrangeiras
+gatilhos
+visões
+integridade transacional
+controle de simultaneidade multiversão
+Além disso, o PostgreSQL pode ser ampliado pelo usuário de muitas maneiras como, por exemplo, adicionando novos tipos de dado, funções, operadoresfunções de agregação, métodos de índice, linguagens procedurais -Devido à sua licença liberal, o PostgreSQL pode ser utilizado, modificado e distribuído por qualquer pessoa para qualquer finalidade, seja particular, comercial ou acadêmica, livre de encargos.
+Antes de irmos para outros passos precisamos instalar uma dependência da</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem pg
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install libpq-dev
+</code></pre></div></div>
+<p>Bom para que funcione precisamos configura-lo para que o mesmo rode perfeitamente no seu ambiente, antes de mais nada vamos verificar qual é a versão que foi instalado no seu ambiente, não importa qual é a sua versão que está instalado no seu ambiente, essa configuração vai funcionar em quase todas versões anteriores essa configuração é um pouco complexa, mais você fazendo com calma e com atenção você consegue primeiro vamos ao .conf</p>
+
+<p>O pg_hba.conf controla as que máquinas terão acesso ao PostgreSQL e a autenticação dessas máquinas clientes (sem autenticação ou através de outras formas, trust, md5, crypt, etc). Quando é especificada a autenticação trust, o PostgreSQL assume que qualquer um que possa se conectar ao servidor está autorizado a acessar o banco de dados como qualquer usuário que seja especificado (incluindo o superusuário do banco de dados). Os métodos de autenticação baseados em senha são md5, crypt e password. Estes métodos operam de forma semelhante, exceto com relação à forma como a senha é enviada através da conexão, mas somente o método md5 suporta senhas criptografadas armazenadas no catálogo do sistema.</p>
+
+<p>Vamos á alteração</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+</code></pre></div></div>
+<p>Indentifique as linhas abaixo, com elas que vamos fazer á alteração</p>
+
+<h1 id="database-administrative-login-by-unix-domain-socket">Database administrative login by Unix domain socket</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    local        all       postgres              peer
+    ``````
+Altere para trust
+
+
+# Database administrative login by Unix domain socket
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> local        all      postgres                  trust `````` pronto!
+</code></pre></div></div>
+
+<p>Salva e vamos reiniciar o postgresql</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/init.d/postgresql restart ou service postgresql restart
+</code></pre></div></div>
+<p>vamos conectar</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql -U postgres
+</code></pre></div></div>
+<p>precisamos de uma senha para o usuário postgres certo?</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALTER USER postgres WITH ENCRYPTED PASSWORD ‘suasenha’;
+</code></pre></div></div>
+<p>agora vamos sair do postgres</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\q
+</code></pre></div></div>
+<p>novamente vamos alterar o socket</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+</code></pre></div></div>
+<p>indentifique as linhas abaixo, com elas que vamos fazer á alteração</p>
+
+<h1 id="database-administrative-login-by-unix-domain-socket-1">Database administrative login by Unix domain socket</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     local        all      postgres                  trust
+</code></pre></div></div>
+<p>altere a para</p>
+
+<h1 id="database-administrative-login-by-unix-domain-socket-2">Database administrative login by Unix domain socket</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     local        all      postgres                  md5
+</code></pre></div></div>
+<p>pronto!</p>
+
+<p>Salva e vamos reiniciar o postgresql</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/init.d/postgresql restart ou service postgresql restart
+</code></pre></div></div>
+<p>Vamos acessar novamente o postgres</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql -U postgres -W
+</code></pre></div></div>
+<p>digite sua senha</p>
+
+<p>pronto o usuario postgres está ok, agora vamos para seu usuário, o que você vai usar no seu ambiente</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE USER fulano WITH ENCRYPTED PASSWORD ‘senha’;
+</code></pre></div></div>
+<p>observe que você criou seu usuário, agora vamos dar as permissões para ele como um super user</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALTER USER fulano WITH SUPERUSER;
+</code></pre></div></div>
+<p>Pronto seu postgresql está funcionando perfeitamente!</p>
+
+<p>Rails</p>
+
+<p>O que é rails?</p>
+
+<p>Ruby on Rails é um framework que faz o desenvolvimento, implantação e manutenção de uma aplicação web mais fácil e essa utiliza uma linguagem orientada à objeto conhecida como Ruby. Para introduzi-lo é preciso que o desenvolvedor conheça algumas de suas filosofias. Essas são:</p>
+
+<p>a instalação dele é bem simples</p>
+
+<p>verifique todas as versões do rails</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem search '^rails$' --all
+gem install rails -v 5.2.0
+</code></pre></div></div>
+<p>pronto seu ambiente está todo configurado!</p>
+
+<p>Vamos testar?</p>
+
+<p>Vamos criar uma aplicação</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails new teste --database=postgresql
+cd /teste
+rails s
+</code></pre></div></div>
+
+<p>Pronto! Seu ambiente está configurado e pronto para o desenvolvimento Ruby on Rails.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">git</a><span class="sep">, </span>
+    
+      <a href="/tags/#iniciante" class="page__taxonomy-item" rel="tag">iniciante</a><span class="sep">, </span>
+    
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/tags/#postgresql" class="page__taxonomy-item" rel="tag">postgresql</a><span class="sep">, </span>
+    
+      <a href="/tags/#rails" class="page__taxonomy-item" rel="tag">rails</a><span class="sep">, </span>
+    
+      <a href="/tags/#redis" class="page__taxonomy-item" rel="tag">redis</a><span class="sep">, </span>
+    
+      <a href="/tags/#ruby" class="page__taxonomy-item" rel="tag">ruby</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#git" class="page__taxonomy-item" rel="tag">git</a><span class="sep">, </span>
+    
+      <a href="/categories/#iniciante" class="page__taxonomy-item" rel="tag">iniciante</a><span class="sep">, </span>
+    
+      <a href="/categories/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/categories/#postgresql" class="page__taxonomy-item" rel="tag">postgresql</a><span class="sep">, </span>
+    
+      <a href="/categories/#rails" class="page__taxonomy-item" rel="tag">rails</a><span class="sep">, </span>
+    
+      <a href="/categories/#redis" class="page__taxonomy-item" rel="tag">redis</a><span class="sep">, </span>
+    
+      <a href="/categories/#ruby" class="page__taxonomy-item" rel="tag">ruby</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-12-16T00:00:00-05:00">December 16, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=mmistakes&text=Criando+um+ambiente+Rails%20http%3A%2F%2Flocalhost%3A4000%2Finiciante%2Frails%2Fruby%2Fpostgresql%2Flinux%2Fgit%2Fredis%2Fcriando-ambiente-rails%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Finiciante%2Frails%2Fruby%2Fpostgresql%2Flinux%2Fgit%2Fredis%2Fcriando-ambiente-rails%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Finiciante%2Frails%2Fruby%2Fpostgresql%2Flinux%2Fgit%2Fredis%2Fcriando-ambiente-rails%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/web/html/css/iniciante/o-basico-de-html/" class="pagination--pager" title="O básico de HTML
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+              style="display:block; border-bottom: initial;"
+              data-ad-client="ca-pub-7328585512091257"
+              data-ad-slot="3049671934"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+      </div>
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web/html/css/iniciante/o-basico-de-html/" rel="permalink">O básico de HTML
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Vou explicar a base do HTML de forma didática!
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web/trilha-profissional/" rel="permalink">Trilha Profissional
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Olá a todos,
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basico-de-tdd-usando-ruby/" rel="permalink">Basico De Tdd Usando Ruby
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+Básico de TDD usando Ruby
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/fundamentos-do-rspec/" rel="permalink">Fundamentos Do Rspec
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+      <div align="center" style="margin: 1em 0;">
+        <ins class="adsbygoogle"
+             style="display:block; border-bottom: initial;"
+             data-ad-client="ca-pub-7328585512091257"
+             data-ad-slot="3049671934"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/mmistakes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Hemershon Silva. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'QB6HVGBSBA',
+  apiKey: '9d5014e5bbc77372547bce778dfa5663',
+  indexName: 'minimal_mistakes',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+    <style>
+      .google-auto-placed {
+        margin: 2em auto;
+      }
+    </style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  </body>
+</html>
