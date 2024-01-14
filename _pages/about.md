@@ -28,8 +28,8 @@ Sou formador em Ciência da computação e Engenharia de software pela Estácio,
 
 | Name                                        | Description                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
-| [Posts by Category][category-archive] | A post with a large header image. |
-| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
+| [O Básico de Ruby][category-archive] | A post with a large header image. |
+| [HTML Tags and Formatting Post](_posts/2023-01-21-o-basico-de-ruby.md) | A variety of common markup showing how the theme styles them. |
 | [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
 | [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
 | [Sample Collection Page][sample-collection] | Single page from a collection. |
@@ -124,4 +124,4 @@ For even more demo pages check the [posts archive][year-archive].
 
 ---
 
-Minimal Mistakes is designed, developed, and maintained by Michael Rose. Just another boring, tattooed, designer from Buffalo New York.
+Minimal Mistakes is designed, developed, and maintained by Michael Rose. Just another boring, tattooed, designer from Buffalo New York.pp
